@@ -21,6 +21,7 @@
 		0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894C26B907F70066D145 /* FlagListViewModel.swift */; };
 		0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746895226B90A8D0066D145 /* FlagListViewController.swift */; };
 		0746895626B9150D0066D145 /* PreviewView in Frameworks */ = {isa = PBXBuildFile; productRef = 0746895526B9150D0066D145 /* PreviewView */; };
+		07A7602926BA4248006437E4 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602826BA4248006437E4 /* CountryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		0746894926B906FB0066D145 /* SplitMix64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMix64.swift; sourceTree = "<group>"; };
 		0746894C26B907F70066D145 /* FlagListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewModel.swift; sourceTree = "<group>"; };
 		0746895226B90A8D0066D145 /* FlagListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewController.swift; sourceTree = "<group>"; };
+		07A7602826BA4248006437E4 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				0746895226B90A8D0066D145 /* FlagListViewController.swift */,
+				07A7602826BA4248006437E4 /* CountryViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A7602926BA4248006437E4 /* CountryViewController.swift in Sources */,
 				0746894126B902580066D145 /* Country.swift in Sources */,
 				0746894726B906430066D145 /* CountryProvider.swift in Sources */,
 				0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */,

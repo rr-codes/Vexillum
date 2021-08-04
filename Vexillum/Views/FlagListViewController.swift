@@ -48,14 +48,6 @@ class FlagListTableViewCell: UITableViewCell {
 }
 
 extension FlagListViewController: UITableViewDataSource {
-    private var filteredCountries: [Country] {
-        if let filterText = self.viewModel.filterText, !filterText.isEmpty {
-            return self.viewModel.filter(by: filterText)
-        } else {
-            return self.viewModel.countries
-        }
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
@@ -83,6 +75,9 @@ extension FlagListViewController: UITableViewDataSource {
 }
 
 extension FlagListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let country = self.filteredCountries[indexPath.section]
+    }
 }
 
 extension FlagListViewController: UISearchResultsUpdating {
@@ -93,6 +88,14 @@ extension FlagListViewController: UISearchResultsUpdating {
 }
 
 class FlagListViewController: UIViewController {
+    private var filteredCountries: [Country] {
+        if let filterText = self.viewModel.filterText, !filterText.isEmpty {
+            return self.viewModel.filter(by: filterText)
+        } else {
+            return self.viewModel.countries
+        }
+    }
+    
     private let viewModel = FlagListViewModel()
     
     override func loadView() {
