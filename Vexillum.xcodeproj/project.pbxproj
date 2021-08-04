@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,12 @@
 		0746891C26B900D70066D145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0746891A26B900D70066D145 /* LaunchScreen.storyboard */; };
 		0746892726B900D80066D145 /* VexillumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746892626B900D80066D145 /* VexillumTests.swift */; };
 		0746893226B900D80066D145 /* VexillumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746893126B900D80066D145 /* VexillumUITests.swift */; };
+		0746894126B902580066D145 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894026B902580066D145 /* Country.swift */; };
+		0746894726B906430066D145 /* CountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894626B906430066D145 /* CountryProvider.swift */; };
+		0746894A26B906FB0066D145 /* SplitMix64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894926B906FB0066D145 /* SplitMix64.swift */; };
+		0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894C26B907F70066D145 /* FlagListViewModel.swift */; };
+		0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746895226B90A8D0066D145 /* FlagListViewController.swift */; };
+		0746895626B9150D0066D145 /* PreviewView in Frameworks */ = {isa = PBXBuildFile; productRef = 0746895526B9150D0066D145 /* PreviewView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,11 @@
 		0746892D26B900D80066D145 /* VexillumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VexillumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0746893126B900D80066D145 /* VexillumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VexillumUITests.swift; sourceTree = "<group>"; };
 		0746893326B900D80066D145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0746894026B902580066D145 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		0746894626B906430066D145 /* CountryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryProvider.swift; sourceTree = "<group>"; };
+		0746894926B906FB0066D145 /* SplitMix64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMix64.swift; sourceTree = "<group>"; };
+		0746894C26B907F70066D145 /* FlagListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewModel.swift; sourceTree = "<group>"; };
+		0746895226B90A8D0066D145 /* FlagListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0746895626B9150D0066D145 /* PreviewView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +111,12 @@
 		0746890E26B900D60066D145 /* Vexillum */ = {
 			isa = PBXGroup;
 			children = (
+				0746894F26B90A5B0066D145 /* Views */,
+				0746894E26B908030066D145 /* Extensions */,
+				0746894B26B907D70066D145 /* ViewModels */,
+				0746894826B906E70066D145 /* Common */,
+				0746894526B906340066D145 /* Providers */,
+				0746893F26B9020B0066D145 /* Models */,
 				0746890F26B900D60066D145 /* AppDelegate.swift */,
 				0746891126B900D60066D145 /* SceneDelegate.swift */,
 				0746891326B900D60066D145 /* ViewController.swift */,
@@ -128,6 +146,53 @@
 			path = VexillumUITests;
 			sourceTree = "<group>";
 		};
+		0746893F26B9020B0066D145 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0746894026B902580066D145 /* Country.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0746894526B906340066D145 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				0746894626B906430066D145 /* CountryProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		0746894826B906E70066D145 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0746894926B906FB0066D145 /* SplitMix64.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0746894B26B907D70066D145 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0746894C26B907F70066D145 /* FlagListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0746894E26B908030066D145 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0746894F26B90A5B0066D145 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0746895226B90A8D0066D145 /* FlagListViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +209,9 @@
 			dependencies = (
 			);
 			name = Vexillum;
+			packageProductDependencies = (
+				0746895526B9150D0066D145 /* PreviewView */,
+			);
 			productName = Vexillum;
 			productReference = 0746890C26B900D60066D145 /* Vexillum.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +283,9 @@
 				Base,
 			);
 			mainGroup = 0746890326B900D60066D145;
+			packageReferences = (
+				0746895426B9150D0066D145 /* XCRemoteSwiftPackageReference "PreviewView" */,
+			);
 			productRefGroup = 0746890D26B900D60066D145 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,8 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0746894126B902580066D145 /* Country.swift in Sources */,
+				0746894726B906430066D145 /* CountryProvider.swift in Sources */,
+				0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */,
 				0746891426B900D60066D145 /* ViewController.swift in Sources */,
+				0746894A26B906FB0066D145 /* SplitMix64.swift in Sources */,
 				0746891026B900D60066D145 /* AppDelegate.swift in Sources */,
+				0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */,
 				0746891226B900D60066D145 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +515,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DS63W44KSD;
 				INFOPLIST_FILE = Vexillum/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,6 +535,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DS63W44KSD;
 				INFOPLIST_FILE = Vexillum/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -593,6 +671,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0746895426B9150D0066D145 /* XCRemoteSwiftPackageReference "PreviewView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/theoriginalbit/PreviewView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0746895526B9150D0066D145 /* PreviewView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0746895426B9150D0066D145 /* XCRemoteSwiftPackageReference "PreviewView" */;
+			productName = PreviewView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0746890426B900D60066D145 /* Project object */;
 }
