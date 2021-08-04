@@ -22,6 +22,8 @@ extension UIView {
 }
 
 class FlagListTableViewCell: UITableViewCell {
+    static let reuseIdentifier = "flagListTableViewCell"
+    
     private let flagImageView = UIImageView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -68,8 +70,12 @@ extension FlagListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let country = self.filteredCountries[indexPath.section]
+        
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: FlagListTableViewCell.reuseIdentifier,
+            for: indexPath
+        ) as! FlagListTableViewCell
                 
-        let cell = FlagListTableViewCell()
         cell.bind(to: country)
                 
         return cell
@@ -93,6 +99,7 @@ class FlagListViewController: UIViewController {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(FlagListTableViewCell.self, forCellReuseIdentifier: FlagListTableViewCell.reuseIdentifier)
         
         self.view = tableView
         
