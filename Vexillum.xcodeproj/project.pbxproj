@@ -21,7 +21,7 @@
 		0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894C26B907F70066D145 /* FlagListViewModel.swift */; };
 		0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746895226B90A8D0066D145 /* FlagListViewController.swift */; };
 		0746895626B9150D0066D145 /* PreviewView in Frameworks */ = {isa = PBXBuildFile; productRef = 0746895526B9150D0066D145 /* PreviewView */; };
-		0766A74D26BE320C0095A1A9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0766A74C26BE320C0095A1A9 /* .swiftlint.yml */; };
+		0766A75026BE437C0095A1A9 /* format.json in Resources */ = {isa = PBXBuildFile; fileRef = 0766A74F26BE437C0095A1A9 /* format.json */; };
 		07A7602926BA4248006437E4 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602826BA4248006437E4 /* CountryViewController.swift */; };
 		07A7602D26BA48E5006437E4 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602C26BA48E5006437E4 /* ReusableView.swift */; };
 		07A7602F26BA49B3006437E4 /* UIView+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602E26BA49B3006437E4 /* UIView+Extended.swift */; };
@@ -65,7 +65,7 @@
 		0746894926B906FB0066D145 /* SplitMix64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMix64.swift; sourceTree = "<group>"; };
 		0746894C26B907F70066D145 /* FlagListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewModel.swift; sourceTree = "<group>"; };
 		0746895226B90A8D0066D145 /* FlagListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewController.swift; sourceTree = "<group>"; };
-		0766A74C26BE320C0095A1A9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		0766A74F26BE437C0095A1A9 /* format.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = format.json; sourceTree = "<group>"; };
 		07A7602826BA4248006437E4 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		07A7602C26BA48E5006437E4 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		07A7602E26BA49B3006437E4 /* UIView+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extended.swift"; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		0746890326B900D60066D145 = {
 			isa = PBXGroup;
 			children = (
-				0766A74C26BE320C0095A1A9 /* .swiftlint.yml */,
+				0766A74F26BE437C0095A1A9 /* format.json */,
 				0746890E26B900D60066D145 /* Vexillum */,
 				0746892526B900D80066D145 /* VexillumTests */,
 				0746893026B900D80066D145 /* VexillumUITests */,
@@ -226,7 +226,8 @@
 				0746890826B900D60066D145 /* Sources */,
 				0746890926B900D60066D145 /* Frameworks */,
 				0746890A26B900D60066D145 /* Resources */,
-				0766A74B26BE2EC10095A1A9 /* ShellScript */,
+				0766A74B26BE2EC10095A1A9 /* Format */,
+				0766A74E26BE42470095A1A9 /* Lint */,
 			);
 			buildRules = (
 			);
@@ -326,7 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0766A74D26BE320C0095A1A9 /* .swiftlint.yml in Resources */,
+				0766A75026BE437C0095A1A9 /* format.json in Resources */,
 				0746891C26B900D70066D145 /* LaunchScreen.storyboard in Resources */,
 				0746891926B900D70066D145 /* Assets.xcassets in Resources */,
 				0746891726B900D60066D145 /* Main.storyboard in Resources */,
@@ -350,7 +351,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0766A74B26BE2EC10095A1A9 /* ShellScript */ = {
+		0766A74B26BE2EC10095A1A9 /* Format */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,13 +360,32 @@
 			);
 			inputPaths = (
 			);
+			name = Format;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "swift-format -i --recursive .\n";
+			shellScript = "if which swift-format >/dev/null; then\n    swift-format -m format --configuration format.json -i -r ${PROJECT_DIR}\nelse\n    echo \"warning: swift-format not installed\"\nfi\n";
+		};
+		0766A74E26BE42470095A1A9 /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swift-format >/dev/null; then\n    swift-format -m lint -r ${PROJECT_DIR}\n    exit 0\nelse\n    echo \"warning: swift-format not installed\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

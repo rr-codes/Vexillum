@@ -28,9 +28,8 @@ extension UITableView {
     register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
   }
 
-  public func registerHeaderFooterView<HeaderFooterView>(
-    _ viewClass: HeaderFooterView.Type
-  ) where HeaderFooterView: ReusableHeaderFooter {
+  public func registerHeaderFooterView<HeaderFooterView>(_ viewClass: HeaderFooterView.Type)
+  where HeaderFooterView: ReusableHeaderFooter {
     register(viewClass, forHeaderFooterViewReuseIdentifier: viewClass.reuseIdentifier)
   }
 

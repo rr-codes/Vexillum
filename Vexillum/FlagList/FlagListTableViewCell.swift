@@ -12,7 +12,10 @@ class FlagListTableViewCell: UITableViewCell, ReusableView {
   private let flagImageView = UIImageView()
   private var cellHeightConstraint: NSLayoutConstraint!
 
-  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+  override init(
+    style: UITableViewCell.CellStyle,
+    reuseIdentifier: String?
+  ) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
     self.cellHeightConstraint = self.flagImageView.heightAnchor.constraint(equalToConstant: 0)
@@ -23,7 +26,6 @@ class FlagListTableViewCell: UITableViewCell, ReusableView {
 
     self.contentView.addSubview(self.flagImageView)
 
-    // Constraints the top, leading, trailing, and bottom anchors of `flsgImageView` to `self.contentView`
     self.flagImageView.pinEdges(to: self.contentView)
   }
 

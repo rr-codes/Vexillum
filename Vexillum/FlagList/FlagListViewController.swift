@@ -66,9 +66,11 @@ class FlagListViewController: UITableViewController {
     ]
   }
 
-  private func cellProvider(tableView: UITableView, indexPath: IndexPath, countryId: Country.ID)
-    -> UITableViewCell
-  {
+  private func cellProvider(
+    tableView: UITableView,
+    indexPath: IndexPath,
+    countryId: Country.ID
+  ) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(FlagListTableViewCell.self, for: indexPath)
     let country = self.viewModel.country(id: countryId)
 
@@ -114,14 +116,6 @@ extension FlagListViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
   }
-  //
-  //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-  //        UITableView.automaticDimension
-  //    }
-  //
-  //    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-  //        60.0
-  //    }
 }
 
 // MARK: UISearchResultsUpdating
@@ -135,9 +129,9 @@ extension FlagListViewController: UISearchResultsUpdating {
 struct YourViewController_Previews: PreviewProvider {
   static var previews: some View {
     Preview(
-      for: FlagListViewController(), navigationControllerStyle: .wrap(prefersLargeTitles: true)
+      for: FlagListViewController(),
+      navigationControllerStyle: .wrap(prefersLargeTitles: true)
     )
-    .edgesIgnoringSafeArea(.all)
-    .previewDevice(nil)
+    .edgesIgnoringSafeArea(.all).previewDevice(nil)
   }
 }

@@ -10,9 +10,7 @@ import Foundation
 public struct SplitMix64: RandomNumberGenerator {
   private var state: UInt64
 
-  public init(seed: UInt64) {
-    self.state = seed
-  }
+  public init(seed: UInt64) { self.state = seed }
 
   public mutating func next() -> UInt64 {
     self.state &+= 0x9e37_79b9_7f4a_7c15

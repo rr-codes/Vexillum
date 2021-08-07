@@ -13,7 +13,9 @@ class FlagListViewModel: ObservableObject {
 
   private var countryProvider: CountryProvider
 
-  init(countryProvider: CountryProvider = .shared) {
+  init(
+    countryProvider: CountryProvider = .shared
+  ) {
     self.countryProvider = countryProvider
     self.countries = countryProvider.allCountries
   }
