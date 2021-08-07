@@ -21,7 +21,11 @@
 		0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894C26B907F70066D145 /* FlagListViewModel.swift */; };
 		0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746895226B90A8D0066D145 /* FlagListViewController.swift */; };
 		0746895626B9150D0066D145 /* PreviewView in Frameworks */ = {isa = PBXBuildFile; productRef = 0746895526B9150D0066D145 /* PreviewView */; };
+		0766A74D26BE320C0095A1A9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0766A74C26BE320C0095A1A9 /* .swiftlint.yml */; };
 		07A7602926BA4248006437E4 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602826BA4248006437E4 /* CountryViewController.swift */; };
+		07A7602D26BA48E5006437E4 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602C26BA48E5006437E4 /* ReusableView.swift */; };
+		07A7602F26BA49B3006437E4 /* UIView+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602E26BA49B3006437E4 /* UIView+Extended.swift */; };
+		07A7603126BA4A8C006437E4 /* FlagListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7603026BA4A8C006437E4 /* FlagListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +65,11 @@
 		0746894926B906FB0066D145 /* SplitMix64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMix64.swift; sourceTree = "<group>"; };
 		0746894C26B907F70066D145 /* FlagListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewModel.swift; sourceTree = "<group>"; };
 		0746895226B90A8D0066D145 /* FlagListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewController.swift; sourceTree = "<group>"; };
+		0766A74C26BE320C0095A1A9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		07A7602826BA4248006437E4 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
+		07A7602C26BA48E5006437E4 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		07A7602E26BA49B3006437E4 /* UIView+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extended.swift"; sourceTree = "<group>"; };
+		07A7603026BA4A8C006437E4 /* FlagListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,7 @@
 		0746890326B900D60066D145 = {
 			isa = PBXGroup;
 			children = (
+				0766A74C26BE320C0095A1A9 /* .swiftlint.yml */,
 				0746890E26B900D60066D145 /* Vexillum */,
 				0746892526B900D80066D145 /* VexillumTests */,
 				0746893026B900D80066D145 /* VexillumUITests */,
@@ -113,9 +122,10 @@
 		0746890E26B900D60066D145 /* Vexillum */ = {
 			isa = PBXGroup;
 			children = (
+				07A7602B26BA48CF006437E4 /* Utilities */,
+				07A7602A26BA48B1006437E4 /* FlagList */,
 				0746894F26B90A5B0066D145 /* Views */,
 				0746894E26B908030066D145 /* Extensions */,
-				0746894B26B907D70066D145 /* ViewModels */,
 				0746894826B906E70066D145 /* Common */,
 				0746894526B906340066D145 /* Providers */,
 				0746893F26B9020B0066D145 /* Models */,
@@ -172,17 +182,10 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
-		0746894B26B907D70066D145 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				0746894C26B907F70066D145 /* FlagListViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
 		0746894E26B908030066D145 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				07A7602E26BA49B3006437E4 /* UIView+Extended.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,10 +193,27 @@
 		0746894F26B90A5B0066D145 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0746895226B90A8D0066D145 /* FlagListViewController.swift */,
 				07A7602826BA4248006437E4 /* CountryViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		07A7602A26BA48B1006437E4 /* FlagList */ = {
+			isa = PBXGroup;
+			children = (
+				0746895226B90A8D0066D145 /* FlagListViewController.swift */,
+				0746894C26B907F70066D145 /* FlagListViewModel.swift */,
+				07A7603026BA4A8C006437E4 /* FlagListTableViewCell.swift */,
+			);
+			path = FlagList;
+			sourceTree = "<group>";
+		};
+		07A7602B26BA48CF006437E4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				07A7602C26BA48E5006437E4 /* ReusableView.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +226,7 @@
 				0746890826B900D60066D145 /* Sources */,
 				0746890926B900D60066D145 /* Frameworks */,
 				0746890A26B900D60066D145 /* Resources */,
+				0766A74B26BE2EC10095A1A9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -305,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0766A74D26BE320C0095A1A9 /* .swiftlint.yml in Resources */,
 				0746891C26B900D70066D145 /* LaunchScreen.storyboard in Resources */,
 				0746891926B900D70066D145 /* Assets.xcassets in Resources */,
 				0746891726B900D60066D145 /* Main.storyboard in Resources */,
@@ -327,18 +349,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0766A74B26BE2EC10095A1A9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect && swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0746890826B900D60066D145 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				07A7602926BA4248006437E4 /* CountryViewController.swift in Sources */,
+				07A7602D26BA48E5006437E4 /* ReusableView.swift in Sources */,
 				0746894126B902580066D145 /* Country.swift in Sources */,
+				07A7603126BA4A8C006437E4 /* FlagListTableViewCell.swift in Sources */,
 				0746894726B906430066D145 /* CountryProvider.swift in Sources */,
 				0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */,
 				0746891426B900D60066D145 /* ViewController.swift in Sources */,
 				0746894A26B906FB0066D145 /* SplitMix64.swift in Sources */,
 				0746891026B900D60066D145 /* AppDelegate.swift in Sources */,
+				07A7602F26BA49B3006437E4 /* UIView+Extended.swift in Sources */,
 				0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */,
 				0746891226B900D60066D145 /* SceneDelegate.swift in Sources */,
 			);

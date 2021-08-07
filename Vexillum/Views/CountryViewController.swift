@@ -10,10 +10,8 @@ import UIKit
 
 class CountryViewController: UIViewController {
     var country: Country!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        UICollectionViewCompositionalLayout.list(using: .init(appearance: .insetGrouped))
     }
 }
