@@ -24,7 +24,7 @@ extension UITableView {
   public typealias ReusableCell = ReusableView & UITableViewCell
   public typealias ReusableHeaderFooter = ReusableView & UITableViewHeaderFooterView
 
-  public func registerCell<Cell>(_ cellClass: Cell.Type) where Cell: ReusableCell {
+  public func registerCell<Cell: ReusableCell>(_ cellClass: Cell.Type) {
     register(cellClass, forCellReuseIdentifier: cellClass.reuseIdentifier)
   }
 
@@ -33,16 +33,13 @@ extension UITableView {
     register(viewClass, forHeaderFooterViewReuseIdentifier: viewClass.reuseIdentifier)
   }
 
-  public func dequeueReusableCell<Cell>(_ cellClass: Cell.Type, for indexPath: IndexPath) -> Cell
-  where Cell: ReusableCell {
-    // swiftlint:disable:next force_cast
+  public func dequeueReusableCell<Cell: ReusableCell>(_ cellClass: Cell.Type, for indexPath: IndexPath) -> Cell {
     dequeueReusableCell(withIdentifier: cellClass.reuseIdentifier, for: indexPath) as! Cell
   }
 
-  public func dequeueReusableHeaderFooterView<HeaderFooterView>(
+  public func dequeueReusableHeaderFooterView<HeaderFooterView: ReusableHeaderFooter>(
     _ viewClass: HeaderFooterView.Type
-  ) -> HeaderFooterView where HeaderFooterView: ReusableHeaderFooter {
-    // swiftlint:disable:next force_cast
+  ) -> HeaderFooterView {
     dequeueReusableHeaderFooterView(withIdentifier: viewClass.reuseIdentifier) as! HeaderFooterView
   }
 }

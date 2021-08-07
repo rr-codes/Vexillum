@@ -385,7 +385,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swift-format >/dev/null; then\n    swift-format -m lint -r ${PROJECT_DIR}\n    exit 0\nelse\n    echo \"warning: swift-format not installed\"\nfi\n";
+			shellScript = "if which swift-format >/dev/null; then\n    swift-format -m lint --configuration format.json -r ${PROJECT_DIR}\n    exit 0\nelse\n    echo \"warning: swift-format not installed\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

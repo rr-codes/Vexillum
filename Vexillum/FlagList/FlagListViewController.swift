@@ -28,13 +28,15 @@ class FlagListViewController: UITableViewController {
   }
 
   @available(*, unavailable)
-  required init?(coder _: NSCoder) {
+  required init?(
+    coder _: NSCoder
+  ) {
     fatalError("init(coder:) has not been implemented")
   }
 
   override func loadView() {
     super.loadView()
-    self.navigationController!.navigationBar.prefersLargeTitles = true
+    self.navigationController?.navigationBar.prefersLargeTitles = true
   }
 
   override func viewDidLoad() {
@@ -66,11 +68,7 @@ class FlagListViewController: UITableViewController {
     ]
   }
 
-  private func cellProvider(
-    tableView: UITableView,
-    indexPath: IndexPath,
-    countryId: Country.ID
-  ) -> UITableViewCell {
+  private func cellProvider(tableView: UITableView, indexPath: IndexPath, countryId: Country.ID) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(FlagListTableViewCell.self, for: indexPath)
     let country = self.viewModel.country(id: countryId)
 
@@ -102,8 +100,7 @@ class FlagListViewController: UITableViewController {
 class FlagListDataSource: UITableViewDiffableDataSource<Country.ID, Country.ID> {
   var viewModel: FlagListViewModel!
 
-  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
-  {
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     let id = self.snapshot().sectionIdentifiers[section]
     let country = self.viewModel.country(id: id)
     return country.name.common
