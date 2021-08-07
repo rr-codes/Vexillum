@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 class CountryViewController: UIViewController {
-    var country: Country!
+  var country: Country!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
 }
