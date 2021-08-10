@@ -52,7 +52,7 @@ struct Country: Codable, Hashable {
 
 extension Country: Comparable {
   static func < (lhs: Country, rhs: Country) -> Bool {
-    lhs.name.common < rhs.name.common
+    lhs.name.common.localizedCompare(rhs.name.common) == .orderedAscending
   }
 }
 

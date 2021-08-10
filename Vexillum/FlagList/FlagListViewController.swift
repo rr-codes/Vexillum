@@ -16,14 +16,12 @@ class FlagListViewController: UITableViewController {
   private let searchController = UISearchController(searchResultsController: nil)
   private var cancellables = Set<AnyCancellable>()
 
-  private lazy var dataSource: FlagListDataSource = {
-    let source = FlagListDataSource(tableView: self.tableView, cellProvider: self.cellProvider)
-    source.viewModel = self.viewModel
-    return source
-  }()
+  private var visibleCountries: [Country] = []
 
   init() {
     super.init(style: .insetGrouped)
+
+    self.visibleCountries = self.viewModel.countries
     self.configureNavigationItem()
   }
 
@@ -39,17 +37,31 @@ class FlagListViewController: UITableViewController {
     self.navigationController?.navigationBar.prefersLargeTitles = true
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    DispatchQueue.main.async {
+      self.tableView.reloadData()
+    }
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
     self.tableView.registerCell(FlagListTableViewCell.self)
+    self.tableView.rowHeight = UITableView.automaticDimension
+
     self.searchController.obscuresBackgroundDuringPresentation = false
     self.searchController.searchResultsUpdater = self
 
-    self.onCountriesChange(newValue: self.viewModel.countries)
+    self.viewModel.$filterQuery
+      .sink { [weak self] _ in
+        guard let self = self else {
+          return
+        }
 
-    self.viewModel.$countries
-      .sink { [weak self] in self?.onCountriesChange(newValue: $0) }
+        self.visibleCountries = self.viewModel.countries
+        self.tableView.reloadData()
+      }
       .store(in: &self.cancellables)
   }
 
@@ -68,42 +80,34 @@ class FlagListViewController: UITableViewController {
     ]
   }
 
-  private func cellProvider(tableView: UITableView, indexPath: IndexPath, countryId: Country.ID) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(FlagListTableViewCell.self, for: indexPath)
-    let country = self.viewModel.country(id: countryId)
-
-    cell.bind(to: country)
-
-    return cell
-  }
-
   @objc private func onRandomCountryButtonTap() {
 
-  }
-
-  private func onCountriesChange(newValue: [Country]) {
-    let ids = newValue.map(\.id)
-
-    var snapshot = NSDiffableDataSourceSnapshot<Country.ID, Country.ID>()
-    snapshot.appendSections(ids)
-
-    for item in ids {
-      snapshot.appendItems([item], toSection: item)
-    }
-
-    self.dataSource.apply(snapshot, animatingDifferences: false)
   }
 }
 
 // MARK: UITableViewDataSource
 
-class FlagListDataSource: UITableViewDiffableDataSource<Country.ID, Country.ID> {
-  var viewModel: FlagListViewModel!
+extension FlagListViewController {
+  public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    self.visibleCountries[section].name.common
+  }
 
-  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    let id = self.snapshot().sectionIdentifiers[section]
-    let country = self.viewModel.country(id: id)
-    return country.name.common
+  public override func numberOfSections(in tableView: UITableView) -> Int {
+    self.visibleCountries.count
+  }
+
+  public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    1
+  }
+
+  public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(FlagListTableViewCell.self, for: indexPath)
+    let country = self.visibleCountries[indexPath.section]
+
+    cell.bind(to: country)
+    cell.layoutIfNeeded()
+
+    return cell
   }
 }
 
@@ -111,7 +115,9 @@ class FlagListDataSource: UITableViewDiffableDataSource<Country.ID, Country.ID> 
 
 extension FlagListViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+    let country = self.visibleCountries[indexPath.section]
+    let vc = CountryViewController(country: country)
+    self.navigationController!.pushViewController(vc, animated: true)
   }
 }
 
@@ -119,7 +125,7 @@ extension FlagListViewController {
 
 extension FlagListViewController: UISearchResultsUpdating {
   func updateSearchResults(for searchController: UISearchController) {
-    self.viewModel.filterCountries(by: searchController.searchBar.text)
+    self.viewModel.filterQuery = searchController.searchBar.text
   }
 }
 

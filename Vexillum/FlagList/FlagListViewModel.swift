@@ -9,29 +9,24 @@ import Combine
 import Foundation
 
 class FlagListViewModel: ObservableObject {
-  @Published var countries: [Country]
-
   private var countryProvider: CountryProvider
+
+  @Published var filterQuery: String? = nil
+
+  var countries: [Country] {
+    let allCountries = self.countryProvider.allCountries
+
+    guard let query = self.filterQuery, !query.isEmpty else {
+      return allCountries
+    }
+
+    return allCountries.filter { $0.name.contains(query: query) }
+  }
 
   init(
     countryProvider: CountryProvider = .shared
   ) {
     self.countryProvider = countryProvider
-    self.countries = countryProvider.allCountries
-  }
-
-  func country(id: Country.ID) -> Country {
-    self.countryProvider.allCountries.first { $0.id == id }!
-  }
-
-  func filterCountries(by query: String?) {
-    var filteredCountries = self.countryProvider.allCountries
-    if let query = query, !query.isEmpty {
-      filteredCountries = filteredCountries.filter {
-        $0.name.contains(query: query)
-      }
-    }
-    self.countries = filteredCountries
   }
 
   func randomCountry() -> Country {
