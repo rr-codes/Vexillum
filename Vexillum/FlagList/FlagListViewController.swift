@@ -104,7 +104,7 @@ extension FlagListViewController {
     let cell = tableView.dequeueReusableCell(FlagListTableViewCell.self, for: indexPath)
     let country = self.visibleCountries[indexPath.section]
 
-    cell.bind(to: country)
+    cell.bind(to: country, for: indexPath.item)
     cell.layoutIfNeeded()
 
     return cell

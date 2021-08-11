@@ -22,6 +22,9 @@
 		0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746895226B90A8D0066D145 /* FlagListViewController.swift */; };
 		0746895626B9150D0066D145 /* PreviewView in Frameworks */ = {isa = PBXBuildFile; productRef = 0746895526B9150D0066D145 /* PreviewView */; };
 		0766A75026BE437C0095A1A9 /* format.json in Resources */ = {isa = PBXBuildFile; fileRef = 0766A74F26BE437C0095A1A9 /* format.json */; };
+		077D6D1D26C3620A004AA28E /* CountryViewDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D6D1C26C3620A004AA28E /* CountryViewDetailCell.swift */; };
+		077D6D1F26C364FB004AA28E /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D6D1E26C364FB004AA28E /* Sections.swift */; };
+		0785EF5926C24D88006C3350 /* BindableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785EF5826C24D88006C3350 /* BindableCell.swift */; };
 		07A7602926BA4248006437E4 /* CountryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602826BA4248006437E4 /* CountryViewController.swift */; };
 		07A7602D26BA48E5006437E4 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602C26BA48E5006437E4 /* ReusableView.swift */; };
 		07A7602F26BA49B3006437E4 /* UIView+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602E26BA49B3006437E4 /* UIView+Extended.swift */; };
@@ -66,6 +69,9 @@
 		0746894C26B907F70066D145 /* FlagListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewModel.swift; sourceTree = "<group>"; };
 		0746895226B90A8D0066D145 /* FlagListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewController.swift; sourceTree = "<group>"; };
 		0766A74F26BE437C0095A1A9 /* format.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = format.json; sourceTree = "<group>"; };
+		077D6D1C26C3620A004AA28E /* CountryViewDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewDetailCell.swift; sourceTree = "<group>"; };
+		077D6D1E26C364FB004AA28E /* Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
+		0785EF5826C24D88006C3350 /* BindableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableCell.swift; sourceTree = "<group>"; };
 		07A7602826BA4248006437E4 /* CountryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewController.swift; sourceTree = "<group>"; };
 		07A7602C26BA48E5006437E4 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		07A7602E26BA49B3006437E4 /* UIView+Extended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extended.swift"; sourceTree = "<group>"; };
@@ -122,9 +128,9 @@
 		0746890E26B900D60066D145 /* Vexillum */ = {
 			isa = PBXGroup;
 			children = (
+				077D6D1B26C361ED004AA28E /* CountryView */,
 				07A7602B26BA48CF006437E4 /* Utilities */,
 				07A7602A26BA48B1006437E4 /* FlagList */,
-				0746894F26B90A5B0066D145 /* Views */,
 				0746894E26B908030066D145 /* Extensions */,
 				0746894826B906E70066D145 /* Common */,
 				0746894526B906340066D145 /* Providers */,
@@ -178,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				0746894926B906FB0066D145 /* SplitMix64.swift */,
+				0785EF5826C24D88006C3350 /* BindableCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -190,12 +197,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		0746894F26B90A5B0066D145 /* Views */ = {
+		077D6D1B26C361ED004AA28E /* CountryView */ = {
 			isa = PBXGroup;
 			children = (
 				07A7602826BA4248006437E4 /* CountryViewController.swift */,
+				077D6D1C26C3620A004AA28E /* CountryViewDetailCell.swift */,
+				077D6D1E26C364FB004AA28E /* Sections.swift */,
 			);
-			path = Views;
+			path = CountryView;
 			sourceTree = "<group>";
 		};
 		07A7602A26BA48B1006437E4 /* FlagList */ = {
@@ -400,12 +409,15 @@
 				07A7603126BA4A8C006437E4 /* FlagListTableViewCell.swift in Sources */,
 				0746894726B906430066D145 /* CountryProvider.swift in Sources */,
 				0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */,
+				077D6D1D26C3620A004AA28E /* CountryViewDetailCell.swift in Sources */,
 				0746891426B900D60066D145 /* ViewController.swift in Sources */,
 				0746894A26B906FB0066D145 /* SplitMix64.swift in Sources */,
 				0746891026B900D60066D145 /* AppDelegate.swift in Sources */,
+				077D6D1F26C364FB004AA28E /* Sections.swift in Sources */,
 				07A7602F26BA49B3006437E4 /* UIView+Extended.swift in Sources */,
 				0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */,
 				0746891226B900D60066D145 /* SceneDelegate.swift in Sources */,
+				0785EF5926C24D88006C3350 /* BindableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

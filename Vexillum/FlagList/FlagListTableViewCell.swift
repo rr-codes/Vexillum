@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class FlagListTableViewCell: UITableViewCell, ReusableView {
+class FlagListTableViewCell: UITableViewCell, BindableCell, ReusableView {
   private let flagImageView = UIImageView()
   private var cellHeightConstraint: NSLayoutConstraint!
 
@@ -36,8 +36,8 @@ class FlagListTableViewCell: UITableViewCell, ReusableView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func bind(to country: Country) {
-    let image = UIImage(named: country.flagImageName)!
+  func bind(to value: Country, for row: Int) {
+    let image = UIImage(named: value.flagImageName)!
     self.flagImageView.image = image
 
     let imageViewWidth = self.contentView.frame.width
