@@ -34,12 +34,14 @@ extension UITableView {
   }
 
   public func dequeueReusableCell<Cell: ReusableCell>(_ cellClass: Cell.Type, for indexPath: IndexPath) -> Cell {
+    // swiftlint:disable:next force_cast
     dequeueReusableCell(withIdentifier: cellClass.reuseIdentifier, for: indexPath) as! Cell
   }
 
   public func dequeueReusableHeaderFooterView<HeaderFooterView: ReusableHeaderFooter>(
     _ viewClass: HeaderFooterView.Type
   ) -> HeaderFooterView {
+    // swiftlint:disable:next force_cast
     dequeueReusableHeaderFooterView(withIdentifier: viewClass.reuseIdentifier) as! HeaderFooterView
   }
 }

@@ -10,76 +10,17 @@ import PreviewView
 import SwiftUI
 import UIKit
 
-class LinkFooterView: UITableViewHeaderFooterView, ReusableView {
-  private let textView = UITextView()
-
-  override init(
-    reuseIdentifier: String?
-  ) {
-    super.init(reuseIdentifier: reuseIdentifier)
-    self.configureContents()
-  }
-
-  @available(*, unavailable)
-  required init?(
-    coder: NSCoder
-  ) {
-    fatalError("init(coder:) has not been implemented")
-  }
-
-  private func configureContents() {
-    self.textView.isEditable = false
-    self.textView.isScrollEnabled = false
-    self.textView.backgroundColor = .clear
-    self.textView.textContainerInset = UIEdgeInsets(top: 0.0, left: -5.0, bottom: 0.0, right: -5.0)  // hard-coded
-
-    self.textView.translatesAutoresizingMaskIntoConstraints = false
-
-    self.contentView.addSubview(self.textView)
-
-    NSLayoutConstraint.activate([
-      self.textView.leadingAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.leadingAnchor),
-      self.textView.topAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.topAnchor),
-      self.textView.trailingAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.trailingAnchor),
-      self.textView.bottomAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.bottomAnchor),
-    ])
-  }
-
-  func bind(to link: URL) {
-    let attributedString = NSAttributedString(
-      string: "More at Wikipedia",
-      attributes: [
-        .font: UIFont.preferredFont(forTextStyle: .footnote),
-        .foregroundColor: UIColor.link,
-        .link: link,
-      ]
-    )
-
-    let linkAttributes: [NSAttributedString.Key: Any] = [
-      .foregroundColor: UIColor.link,
-      .underlineStyle: 0,
-    ]
-
-    self.textView.linkTextAttributes = linkAttributes
-    self.textView.attributedText = attributedString
-  }
-}
-
 class CountryViewController: UITableViewController {
   private let country: Country
 
-  init(
-    country: Country
-  ) {
+  init(country: Country) {
     self.country = country
     super.init(style: .insetGrouped)
     self.configureNavigationItem()
   }
 
   @available(*, unavailable)
-  required init?(
-    coder _: NSCoder
-  ) {
+  required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
@@ -101,6 +42,7 @@ class CountryViewController: UITableViewController {
     self.tableView.registerCell(FlagListTableViewCell.self)
     self.tableView.registerCell(CountryViewDetailCell.self)
     self.tableView.registerHeaderFooterView(LinkFooterView.self)
+    self.tableView.registerHeaderFooterView(SectionSymbolHeaderView.self)
   }
 
   private func configureNavigationItem() {
@@ -132,12 +74,16 @@ extension CountryViewController {
     44.0
   }
 
-  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     guard let section = Section(rawValue: section) else {
       fatalError()
     }
 
-    return section.header(for: self.country)
+    let view = tableView.dequeueReusableHeaderFooterView(SectionSymbolHeaderView.self)
+    view.bind(to: section, for: self.country)
+    view.layoutIfNeeded()
+
+    return view
   }
 
   override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
@@ -157,9 +103,12 @@ extension CountryViewController {
       return nil
     }
 
+    let text = Section.details.footer(for: self.country)!
+
     let view = tableView.dequeueReusableHeaderFooterView(LinkFooterView.self)
-    view.bind(to: wiki)
+    view.bind(to: text, link: wiki)
     view.layoutIfNeeded()
+
     return view
   }
 

@@ -20,18 +20,18 @@ extension CountryViewController {
       }
     }
 
-    func header(for country: Country) -> String {
+    func header(for country: Country) -> (text: String, symbolName: String) {
       switch self {
-      case .flag: return "Flag"
-      case .details: return "Details"
-      case .location: return "Location"
+      case .flag: return (text: "Flag", symbolName: "flag")
+      case .details: return (text: "Details", symbolName: "info.circle")
+      case .location: return (text: "Location", symbolName: "map")
       }
     }
 
     func footer(for country: Country) -> String? {
       switch self {
       case .flag: return country.design
-      case .details: return "Hi"
+      case .details: return "More at Wikipedia"
       case .location: return nil
       }
     }

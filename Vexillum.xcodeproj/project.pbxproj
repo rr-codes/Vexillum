@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072AED1626C3945A006650F6 /* LinkFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072AED1526C3945A006650F6 /* LinkFooterView.swift */; };
+		072AED1826C39691006650F6 /* SectionSymbolHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072AED1726C39691006650F6 /* SectionSymbolHeaderView.swift */; };
 		0746891026B900D60066D145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746890F26B900D60066D145 /* AppDelegate.swift */; };
 		0746891226B900D60066D145 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746891126B900D60066D145 /* SceneDelegate.swift */; };
 		0746891426B900D60066D145 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746891326B900D60066D145 /* ViewController.swift */; };
@@ -21,7 +23,6 @@
 		0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894C26B907F70066D145 /* FlagListViewModel.swift */; };
 		0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746895226B90A8D0066D145 /* FlagListViewController.swift */; };
 		0746895626B9150D0066D145 /* PreviewView in Frameworks */ = {isa = PBXBuildFile; productRef = 0746895526B9150D0066D145 /* PreviewView */; };
-		0766A75026BE437C0095A1A9 /* format.json in Resources */ = {isa = PBXBuildFile; fileRef = 0766A74F26BE437C0095A1A9 /* format.json */; };
 		077D6D1D26C3620A004AA28E /* CountryViewDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D6D1C26C3620A004AA28E /* CountryViewDetailCell.swift */; };
 		077D6D1F26C364FB004AA28E /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D6D1E26C364FB004AA28E /* Sections.swift */; };
 		0785EF5926C24D88006C3350 /* BindableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785EF5826C24D88006C3350 /* BindableCell.swift */; };
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		072AED1526C3945A006650F6 /* LinkFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFooterView.swift; sourceTree = "<group>"; };
+		072AED1726C39691006650F6 /* SectionSymbolHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSymbolHeaderView.swift; sourceTree = "<group>"; };
 		0746890C26B900D60066D145 /* Vexillum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vexillum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0746890F26B900D60066D145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0746891126B900D60066D145 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 		0746894926B906FB0066D145 /* SplitMix64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitMix64.swift; sourceTree = "<group>"; };
 		0746894C26B907F70066D145 /* FlagListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewModel.swift; sourceTree = "<group>"; };
 		0746895226B90A8D0066D145 /* FlagListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagListViewController.swift; sourceTree = "<group>"; };
-		0766A74F26BE437C0095A1A9 /* format.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = format.json; sourceTree = "<group>"; };
 		077D6D1C26C3620A004AA28E /* CountryViewDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewDetailCell.swift; sourceTree = "<group>"; };
 		077D6D1E26C364FB004AA28E /* Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sections.swift; sourceTree = "<group>"; };
 		0785EF5826C24D88006C3350 /* BindableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableCell.swift; sourceTree = "<group>"; };
@@ -107,7 +109,6 @@
 		0746890326B900D60066D145 = {
 			isa = PBXGroup;
 			children = (
-				0766A74F26BE437C0095A1A9 /* format.json */,
 				0746890E26B900D60066D145 /* Vexillum */,
 				0746892526B900D80066D145 /* VexillumTests */,
 				0746893026B900D80066D145 /* VexillumUITests */,
@@ -203,6 +204,8 @@
 				07A7602826BA4248006437E4 /* CountryViewController.swift */,
 				077D6D1C26C3620A004AA28E /* CountryViewDetailCell.swift */,
 				077D6D1E26C364FB004AA28E /* Sections.swift */,
+				072AED1526C3945A006650F6 /* LinkFooterView.swift */,
+				072AED1726C39691006650F6 /* SectionSymbolHeaderView.swift */,
 			);
 			path = CountryView;
 			sourceTree = "<group>";
@@ -235,8 +238,7 @@
 				0746890826B900D60066D145 /* Sources */,
 				0746890926B900D60066D145 /* Frameworks */,
 				0746890A26B900D60066D145 /* Resources */,
-				0766A74B26BE2EC10095A1A9 /* Format */,
-				0766A74E26BE42470095A1A9 /* Lint */,
+				07249A3626C4CB9500DE3278 /* Lint */,
 			);
 			buildRules = (
 			);
@@ -336,7 +338,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0766A75026BE437C0095A1A9 /* format.json in Resources */,
 				0746891C26B900D70066D145 /* LaunchScreen.storyboard in Resources */,
 				0746891926B900D70066D145 /* Assets.xcassets in Resources */,
 				0746891726B900D60066D145 /* Main.storyboard in Resources */,
@@ -360,25 +361,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0766A74B26BE2EC10095A1A9 /* Format */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Format;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swift-format >/dev/null; then\n    swift-format -m format --configuration format.json -i -r ${PROJECT_DIR}\nelse\n    echo \"warning: swift-format not installed\"\nfi\n";
-		};
-		0766A74E26BE42470095A1A9 /* Lint */ = {
+		07249A3626C4CB9500DE3278 /* Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -394,7 +377,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swift-format >/dev/null; then\n    swift-format -m lint --configuration format.json -r ${PROJECT_DIR}\n    exit 0\nelse\n    echo \"warning: swift-format not installed\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -410,12 +393,14 @@
 				0746894726B906430066D145 /* CountryProvider.swift in Sources */,
 				0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */,
 				077D6D1D26C3620A004AA28E /* CountryViewDetailCell.swift in Sources */,
+				072AED1626C3945A006650F6 /* LinkFooterView.swift in Sources */,
 				0746891426B900D60066D145 /* ViewController.swift in Sources */,
 				0746894A26B906FB0066D145 /* SplitMix64.swift in Sources */,
 				0746891026B900D60066D145 /* AppDelegate.swift in Sources */,
 				077D6D1F26C364FB004AA28E /* Sections.swift in Sources */,
 				07A7602F26BA49B3006437E4 /* UIView+Extended.swift in Sources */,
 				0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */,
+				072AED1826C39691006650F6 /* SectionSymbolHeaderView.swift in Sources */,
 				0746891226B900D60066D145 /* SceneDelegate.swift in Sources */,
 				0785EF5926C24D88006C3350 /* BindableCell.swift in Sources */,
 			);

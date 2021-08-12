@@ -26,9 +26,7 @@ class FlagListViewController: UITableViewController {
   }
 
   @available(*, unavailable)
-  required init?(
-    coder _: NSCoder
-  ) {
+  required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
@@ -116,8 +114,8 @@ extension FlagListViewController {
 extension FlagListViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let country = self.visibleCountries[indexPath.section]
-    let vc = CountryViewController(country: country)
-    self.navigationController!.pushViewController(vc, animated: true)
+    let countryViewController = CountryViewController(country: country)
+    self.navigationController!.pushViewController(countryViewController, animated: true)
   }
 }
 

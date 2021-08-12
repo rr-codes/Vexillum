@@ -14,7 +14,7 @@ extension UIView {
       self.leadingAnchor.constraint(equalTo: parent.leadingAnchor),
       self.trailingAnchor.constraint(equalTo: parent.trailingAnchor),
       self.topAnchor.constraint(equalTo: parent.topAnchor),
-      self.bottomAnchor.constraint(equalTo: parent.bottomAnchor),
+      self.bottomAnchor.constraint(equalTo: parent.bottomAnchor)
     ])
   }
 }

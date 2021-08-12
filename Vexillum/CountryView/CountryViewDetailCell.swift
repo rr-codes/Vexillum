@@ -13,17 +13,12 @@ class CountryViewDetailCell: UITableViewCell, BindableCell, ReusableView {
     let label: String
     let value: String
 
-    init(
-      label: String,
-      value: String
-    ) {
+    init(label: String, value: String) {
       self.label = label
       self.value = value
     }
 
-    init<S: Sequence>(
-      label: String,
-      value: S
+    init<S: Sequence>(label: String, value: S
     ) where S.Element == String {
       self.init(label: label, value: value.joined(separator: ", "))
     }
@@ -39,7 +34,7 @@ class CountryViewDetailCell: UITableViewCell, BindableCell, ReusableView {
       .init(label: "Region", value: country.region),
       .init(label: "Land Area", value: Self.measurementFormatter.string(from: country.areaMeasurement)),
       .init(label: "Currencies", value: country.currencies.map { "\($1.symbol) (\($0))" }),
-      .init(label: "Languages", value: country.languages.values.sorted()),
+      .init(label: "Languages", value: country.languages.values.sorted())
     ]
   }
 

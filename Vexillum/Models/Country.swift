@@ -57,6 +57,7 @@ extension Country: Comparable {
 }
 
 extension Country: Identifiable {
+  // swiftlint:disable:next identifier_name
   var id: String {
     self.cca3
   }

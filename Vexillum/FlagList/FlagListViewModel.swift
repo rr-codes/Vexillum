@@ -11,7 +11,7 @@ import Foundation
 class FlagListViewModel: ObservableObject {
   private var countryProvider: CountryProvider
 
-  @Published var filterQuery: String? = nil
+  @Published var filterQuery: String?
 
   var countries: [Country] {
     let allCountries = self.countryProvider.allCountries
@@ -23,9 +23,7 @@ class FlagListViewModel: ObservableObject {
     return allCountries.filter { $0.name.contains(query: query) }
   }
 
-  init(
-    countryProvider: CountryProvider = .shared
-  ) {
+  init(countryProvider: CountryProvider = .shared) {
     self.countryProvider = countryProvider
   }
 

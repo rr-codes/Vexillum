@@ -12,10 +12,7 @@ class FlagListTableViewCell: UITableViewCell, BindableCell, ReusableView {
   private let flagImageView = UIImageView()
   private var cellHeightConstraint: NSLayoutConstraint!
 
-  override init(
-    style: UITableViewCell.CellStyle,
-    reuseIdentifier: String?
-  ) {
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
 
     self.cellHeightConstraint = self.flagImageView.heightAnchor.constraint(equalToConstant: 0)
@@ -30,9 +27,7 @@ class FlagListTableViewCell: UITableViewCell, BindableCell, ReusableView {
   }
 
   @available(*, unavailable)
-  required init?(
-    coder _: NSCoder
-  ) {
+  required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
