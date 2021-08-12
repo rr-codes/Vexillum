@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "PreviewView",
+        "repositoryURL": "https://github.com/theoriginalbit/PreviewView",
+        "state": {
+          "branch": null,
+          "revision": "64a4adc4ed14d3cb7d3c6e721bfa6d37494cf66f",
+          "version": "2.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

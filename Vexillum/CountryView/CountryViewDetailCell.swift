@@ -18,8 +18,7 @@ class CountryViewDetailCell: UITableViewCell, BindableCell, ReusableView {
       self.value = value
     }
 
-    init<S: Sequence>(label: String, value: S
-    ) where S.Element == String {
+    init<S: Sequence>(label: String, value: S) where S.Element == String {
       self.init(label: label, value: value.joined(separator: ", "))
     }
   }
@@ -38,19 +37,14 @@ class CountryViewDetailCell: UITableViewCell, BindableCell, ReusableView {
     ]
   }
 
-  override init(
-    style: UITableViewCell.CellStyle,
-    reuseIdentifier: String?
-  ) {
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: .value1, reuseIdentifier: reuseIdentifier)
     self.detailTextLabel!.lineBreakMode = .byWordWrapping
     self.detailTextLabel!.numberOfLines = 0
   }
 
   @available(*, unavailable)
-  required init?(
-    coder _: NSCoder
-  ) {
+  required init?(coder _: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
@@ -67,12 +61,11 @@ class CountryViewDetailCell: UITableViewCell, BindableCell, ReusableView {
     verticalFittingPriority: UILayoutPriority
   ) -> CGSize {
     self.layoutIfNeeded()
-    var size = super
-      .systemLayoutSizeFitting(
-        targetSize,
-        withHorizontalFittingPriority: horizontalFittingPriority,
-        verticalFittingPriority: verticalFittingPriority
-      )
+    var size = super.systemLayoutSizeFitting(
+      targetSize,
+      withHorizontalFittingPriority: horizontalFittingPriority,
+      verticalFittingPriority: verticalFittingPriority
+    )
 
     size.height += detailTextLabel!.frame.size.height - textLabel!.frame.size.height
 

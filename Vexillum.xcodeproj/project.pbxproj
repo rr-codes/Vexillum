@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07249A3826C4CEC500DE3278 /* CountryLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07249A3726C4CEC500DE3278 /* CountryLocationCell.swift */; };
 		072AED1626C3945A006650F6 /* LinkFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072AED1526C3945A006650F6 /* LinkFooterView.swift */; };
 		072AED1826C39691006650F6 /* SectionSymbolHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072AED1726C39691006650F6 /* SectionSymbolHeaderView.swift */; };
 		0746891026B900D60066D145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746890F26B900D60066D145 /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07249A3726C4CEC500DE3278 /* CountryLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLocationCell.swift; sourceTree = "<group>"; };
 		072AED1526C3945A006650F6 /* LinkFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFooterView.swift; sourceTree = "<group>"; };
 		072AED1726C39691006650F6 /* SectionSymbolHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSymbolHeaderView.swift; sourceTree = "<group>"; };
 		0746890C26B900D60066D145 /* Vexillum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vexillum.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +208,7 @@
 				077D6D1E26C364FB004AA28E /* Sections.swift */,
 				072AED1526C3945A006650F6 /* LinkFooterView.swift */,
 				072AED1726C39691006650F6 /* SectionSymbolHeaderView.swift */,
+				07249A3726C4CEC500DE3278 /* CountryLocationCell.swift */,
 			);
 			path = CountryView;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				072AED1826C39691006650F6 /* SectionSymbolHeaderView.swift in Sources */,
 				0746891226B900D60066D145 /* SceneDelegate.swift in Sources */,
 				0785EF5926C24D88006C3350 /* BindableCell.swift in Sources */,
+				07249A3826C4CEC500DE3278 /* CountryLocationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

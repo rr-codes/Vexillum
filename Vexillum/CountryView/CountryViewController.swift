@@ -41,6 +41,8 @@ class CountryViewController: UITableViewController {
 
     self.tableView.registerCell(FlagListTableViewCell.self)
     self.tableView.registerCell(CountryViewDetailCell.self)
+    self.tableView.registerCell(CountryLocationCell.self)
+
     self.tableView.registerHeaderFooterView(LinkFooterView.self)
     self.tableView.registerHeaderFooterView(SectionSymbolHeaderView.self)
   }

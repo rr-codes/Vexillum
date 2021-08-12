@@ -16,7 +16,7 @@ extension CountryViewController {
       switch self {
       case .flag: return 1
       case .details: return 7
-      case .location: return 0
+      case .location: return 1
       }
     }
 
@@ -43,7 +43,7 @@ extension CountryViewController {
       switch self {
       case .flag: return tableView.dequeueReusableCell(FlagListTableViewCell.self, for: indexPath)
       case .details: return tableView.dequeueReusableCell(CountryViewDetailCell.self, for: indexPath)
-      case .location: fatalError()
+      case .location: return tableView.dequeueReusableCell(CountryLocationCell.self, for: indexPath)
       }
     }
   }

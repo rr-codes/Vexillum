@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct Country: Codable, Hashable {
   struct Name: Codable, Hashable {
@@ -43,6 +44,10 @@ struct Country: Codable, Hashable {
 
   var areaMeasurement: Measurement<UnitArea> {
     Measurement(value: self.area, unit: UnitArea.squareKilometers)
+  }
+
+  var coordinates: CLLocationCoordinate2D {
+    CLLocationCoordinate2D(latitude: self.latlng[0], longitude: self.latlng[1])
   }
 
   var flagImageName: String {
