@@ -32,7 +32,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     self.window = window
     window.makeKeyAndVisible()
 
-    CountryProvider.shared.indexAllCountries()
+    let alreadyIndexed = UserDefaults.standard.bool(forKey: "isSpotlightIndexed")
+    if !alreadyIndexed {
+      CountryProvider.shared.indexAllCountries()
+      UserDefaults.standard.set(true, forKey: "isSpotlightIndexed")
+    }
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {
