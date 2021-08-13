@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreSpotlight
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -30,6 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     self.window = window
     window.makeKeyAndVisible()
+
+    CountryProvider.shared.indexAllCountries()
   }
 
   func sceneDidDisconnect(_ scene: UIScene) {
@@ -61,19 +64,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // to restore the scene back to its current state.
   }
 
+  func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+    switch userActivity.activityType {
+    case CSSearchableItemActionType:
+      self.handleSearchableItemAction(from: userActivity)
+
+    default:
+      fatalError()
+    }
+  }
+
   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    for context in URLContexts where context.url.scheme == "com.richardrobinson.vexillum" {
+      let countryId = context.url.lastPathComponent
+      self.openCountryView(forCountryWithId: countryId)
+    }
+  }
+
+  private func handleSearchableItemAction(from userActivity: NSUserActivity) {
+    guard let countryId = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String else {
+      fatalError()
+    }
+
+    self.openCountryView(forCountryWithId: countryId)
+  }
+
+  // swiftlint:disable identifier_name
+  private func openCountryView(forCountryWithId id: Country.ID) {
     guard let window = self.window?.rootViewController as? UINavigationController else {
       fatalError()
     }
 
-    for context in URLContexts where context.url.scheme == "com.richardrobinson.vexillum" {
-      let countryId = context.url.lastPathComponent
-      let country = CountryProvider.shared.find(countryWithId: countryId)
+    let country = CountryProvider.shared.find(countryWithId: id)
 
-      let countryViewController = CountryViewController(country: country)
+    let countryViewController = CountryViewController(country: country)
 
-      window.popToRootViewController(animated: false)
-      window.pushViewController(countryViewController, animated: true)
-    }
+    window.popToRootViewController(animated: false)
+    window.pushViewController(countryViewController, animated: true)
   }
 }

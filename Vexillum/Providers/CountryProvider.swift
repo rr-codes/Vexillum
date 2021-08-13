@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import CoreSpotlight
+import MobileCoreServices
 
 class CountryProvider {
   static let shared = CountryProvider()
@@ -33,5 +35,30 @@ class CountryProvider {
 
     let shuffled = self.allCountries.shuffled(using: &rng)
     return shuffled[today % self.allCountries.count]
+  }
+
+  private func createSearchableItem(for country: Country) -> CSSearchableItem {
+    let attributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeImage as String)
+
+    attributeSet.title = "Flag of \(country.name.common)"
+    attributeSet.contentDescription = "The flag of \(country.name.official)"
+    attributeSet.thumbnailData = UIImage(named: country.flagImageName)!.pngData()!
+    attributeSet.keywords = [country.cca3, country.name.common, "flag", "country"]
+
+    return CSSearchableItem(
+      uniqueIdentifier: country.id,
+      domainIdentifier: "com.richardrobinson.vexillum",
+      attributeSet: attributeSet
+    )
+  }
+
+  func indexAllCountries() {
+    let items = self.allCountries.map(self.createSearchableItem(for:))
+
+    CSSearchableIndex.default().indexSearchableItems(items) { error in
+      if let error = error {
+        fatalError(error.localizedDescription)
+      }
+    }
   }
 }
