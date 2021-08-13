@@ -14,8 +14,8 @@ struct Country: Codable, Hashable {
     let official: String
 
     func contains(query: String) -> Bool {
-      common.localizedCaseInsensitiveContains(query)
-        || official.localizedCaseInsensitiveContains(query)
+      self.common.localizedCaseInsensitiveContains(query)
+        || self.official.localizedCaseInsensitiveContains(query)
     }
   }
 

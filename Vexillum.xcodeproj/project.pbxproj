@@ -19,6 +19,30 @@
 		0734308526C5EE7F00F56019 /* CountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894626B906430066D145 /* CountryProvider.swift */; };
 		0734308626C5EE8200F56019 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894026B902580066D145 /* Country.swift */; };
 		0734308726C5FBD200F56019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0746891826B900D70066D145 /* Assets.xcassets */; };
+		0734309026C61B1F00F56019 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0734308F26C61B1F00F56019 /* IntentsUI.framework */; };
+		0734309326C61B1F00F56019 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734309226C61B1F00F56019 /* IntentViewController.swift */; };
+		0734309626C61B1F00F56019 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0734309426C61B1F00F56019 /* MainInterface.storyboard */; };
+		0734309A26C61B1F00F56019 /* VexillumIntentUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0734308E26C61B1F00F56019 /* VexillumIntentUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		073430B026C61C1500F56019 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 073430AF26C61C1400F56019 /* Intents.intentdefinition */; };
+		073430B126C61C1500F56019 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 073430AF26C61C1400F56019 /* Intents.intentdefinition */; };
+		073430BB26C61F1100F56019 /* CountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894626B906430066D145 /* CountryProvider.swift */; };
+		073430BD26C61F1D00F56019 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894026B902580066D145 /* Country.swift */; };
+		073430BE26C61F2500F56019 /* SplitMix64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894926B906FB0066D145 /* SplitMix64.swift */; };
+		073430BF26C6212200F56019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0746891826B900D70066D145 /* Assets.xcassets */; };
+		073430C126C625CA00F56019 /* UIView+Extended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7602E26BA49B3006437E4 /* UIView+Extended.swift */; };
+		0734312B26C640DE00F56019 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 073430A326C61BFB00F56019 /* Intents.framework */; };
+		0734313226C640DE00F56019 /* VexillumIntent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0734312A26C640DE00F56019 /* VexillumIntent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0734313B26C6416300F56019 /* FlagIntentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734313626C6416200F56019 /* FlagIntentResponse.swift */; };
+		0734313C26C6416300F56019 /* GetFlagIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734313726C6416300F56019 /* GetFlagIntentHandler.swift */; };
+		0734313D26C6416300F56019 /* FlagData+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734313826C6416300F56019 /* FlagData+Extensions.swift */; };
+		0734313E26C6416300F56019 /* FlagOfTheDayIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734313926C6416300F56019 /* FlagOfTheDayIntentHandler.swift */; };
+		0734313F26C6416300F56019 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734313A26C6416300F56019 /* IntentHandler.swift */; };
+		0734314026C6416F00F56019 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 073430AF26C61C1400F56019 /* Intents.intentdefinition */; };
+		0734314226C641AE00F56019 /* SplitMix64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894926B906FB0066D145 /* SplitMix64.swift */; };
+		0734314426C641B500F56019 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894026B902580066D145 /* Country.swift */; };
+		0734314526C641B800F56019 /* CountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894626B906430066D145 /* CountryProvider.swift */; };
+		0734314826C641DF00F56019 /* FlagIntentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734313626C6416200F56019 /* FlagIntentResponse.swift */; };
+		0734314926C6422C00F56019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0746891826B900D70066D145 /* Assets.xcassets */; };
 		0746891026B900D60066D145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746890F26B900D60066D145 /* AppDelegate.swift */; };
 		0746891226B900D60066D145 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746891126B900D60066D145 /* SceneDelegate.swift */; };
 		0746891426B900D60066D145 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746891326B900D60066D145 /* ViewController.swift */; };
@@ -50,6 +74,20 @@
 			remoteGlobalIDString = 0734307426C5EE7100F56019;
 			remoteInfo = FlagWidgetExtension;
 		};
+		0734309826C61B1F00F56019 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0746890426B900D60066D145 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0734308D26C61B1F00F56019;
+			remoteInfo = VexillumIntentUI;
+		};
+		0734313026C640DE00F56019 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0746890426B900D60066D145 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0734312926C640DE00F56019;
+			remoteInfo = VexillumIntent;
+		};
 		0746892326B900D80066D145 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0746890426B900D60066D145 /* Project object */;
@@ -73,6 +111,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				0734309A26C61B1F00F56019 /* VexillumIntentUI.appex in Embed App Extensions */,
+				0734313226C640DE00F56019 /* VexillumIntent.appex in Embed App Extensions */,
 				0734308026C5EE7200F56019 /* FlagWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -90,6 +130,21 @@
 		0734307926C5EE7200F56019 /* FlagWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagWidget.swift; sourceTree = "<group>"; };
 		0734307B26C5EE7200F56019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0734307D26C5EE7200F56019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0734308E26C61B1F00F56019 /* VexillumIntentUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VexillumIntentUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0734308F26C61B1F00F56019 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		0734309226C61B1F00F56019 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		0734309526C61B1F00F56019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		0734309726C61B1F00F56019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		073430A326C61BFB00F56019 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		073430AF26C61C1400F56019 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		073430FF26C63A9600F56019 /* Vexillum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Vexillum.entitlements; sourceTree = "<group>"; };
+		0734312A26C640DE00F56019 /* VexillumIntent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = VexillumIntent.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0734312F26C640DE00F56019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0734313626C6416200F56019 /* FlagIntentResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagIntentResponse.swift; sourceTree = "<group>"; };
+		0734313726C6416300F56019 /* GetFlagIntentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetFlagIntentHandler.swift; sourceTree = "<group>"; };
+		0734313826C6416300F56019 /* FlagData+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlagData+Extensions.swift"; sourceTree = "<group>"; };
+		0734313926C6416300F56019 /* FlagOfTheDayIntentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagOfTheDayIntentHandler.swift; sourceTree = "<group>"; };
+		0734313A26C6416300F56019 /* IntentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		0746890C26B900D60066D145 /* Vexillum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vexillum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0746890F26B900D60066D145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0746891126B900D60066D145 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -128,6 +183,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0734308B26C61B1F00F56019 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0734309026C61B1F00F56019 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0734312726C640DE00F56019 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0734312B26C640DE00F56019 /* Intents.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0746890926B900D60066D145 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,6 +229,8 @@
 			children = (
 				0734305D26C5ED2700F56019 /* WidgetKit.framework */,
 				0734305F26C5ED2700F56019 /* SwiftUI.framework */,
+				0734308F26C61B1F00F56019 /* IntentsUI.framework */,
+				073430A326C61BFB00F56019 /* Intents.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -172,13 +245,51 @@
 			path = FlagWidget;
 			sourceTree = "<group>";
 		};
+		0734309126C61B1F00F56019 /* VexillumIntentUI */ = {
+			isa = PBXGroup;
+			children = (
+				0734309226C61B1F00F56019 /* IntentViewController.swift */,
+				0734309426C61B1F00F56019 /* MainInterface.storyboard */,
+				0734309726C61B1F00F56019 /* Info.plist */,
+			);
+			path = VexillumIntentUI;
+			sourceTree = "<group>";
+		};
+		0734312C26C640DE00F56019 /* VexillumIntent */ = {
+			isa = PBXGroup;
+			children = (
+				0734313826C6416300F56019 /* FlagData+Extensions.swift */,
+				0734313926C6416300F56019 /* FlagOfTheDayIntentHandler.swift */,
+				0734313726C6416300F56019 /* GetFlagIntentHandler.swift */,
+				0734313A26C6416300F56019 /* IntentHandler.swift */,
+				0734312F26C640DE00F56019 /* Info.plist */,
+			);
+			path = VexillumIntent;
+			sourceTree = "<group>";
+		};
+		0734314126C6417A00F56019 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0734313626C6416200F56019 /* FlagIntentResponse.swift */,
+				0746894926B906FB0066D145 /* SplitMix64.swift */,
+				0746894E26B908030066D145 /* Extensions */,
+				0746893F26B9020B0066D145 /* Models */,
+				0746894526B906340066D145 /* Providers */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		0746890326B900D60066D145 = {
 			isa = PBXGroup;
 			children = (
+				0734314126C6417A00F56019 /* Common */,
+				073430AF26C61C1400F56019 /* Intents.intentdefinition */,
 				0746890E26B900D60066D145 /* Vexillum */,
 				0746892526B900D80066D145 /* VexillumTests */,
 				0746893026B900D80066D145 /* VexillumUITests */,
 				0734307826C5EE7200F56019 /* FlagWidget */,
+				0734309126C61B1F00F56019 /* VexillumIntentUI */,
+				0734312C26C640DE00F56019 /* VexillumIntent */,
 				0734305C26C5ED2700F56019 /* Frameworks */,
 				0746890D26B900D60066D145 /* Products */,
 			);
@@ -191,6 +302,8 @@
 				0746892226B900D80066D145 /* VexillumTests.xctest */,
 				0746892D26B900D80066D145 /* VexillumUITests.xctest */,
 				0734307526C5EE7100F56019 /* FlagWidgetExtension.appex */,
+				0734308E26C61B1F00F56019 /* VexillumIntentUI.appex */,
+				0734312A26C640DE00F56019 /* VexillumIntent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -198,13 +311,11 @@
 		0746890E26B900D60066D145 /* Vexillum */ = {
 			isa = PBXGroup;
 			children = (
+				073430FF26C63A9600F56019 /* Vexillum.entitlements */,
 				077D6D1B26C361ED004AA28E /* CountryView */,
 				07A7602B26BA48CF006437E4 /* Utilities */,
 				07A7602A26BA48B1006437E4 /* FlagList */,
-				0746894E26B908030066D145 /* Extensions */,
 				0746894826B906E70066D145 /* Common */,
-				0746894526B906340066D145 /* Providers */,
-				0746893F26B9020B0066D145 /* Models */,
 				0746890F26B900D60066D145 /* AppDelegate.swift */,
 				0746891126B900D60066D145 /* SceneDelegate.swift */,
 				0746891326B900D60066D145 /* ViewController.swift */,
@@ -253,7 +364,6 @@
 		0746894826B906E70066D145 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				0746894926B906FB0066D145 /* SplitMix64.swift */,
 				0785EF5826C24D88006C3350 /* BindableCell.swift */,
 			);
 			path = Common;
@@ -318,6 +428,40 @@
 			productReference = 0734307526C5EE7100F56019 /* FlagWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		0734308D26C61B1F00F56019 /* VexillumIntentUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0734309B26C61B1F00F56019 /* Build configuration list for PBXNativeTarget "VexillumIntentUI" */;
+			buildPhases = (
+				0734308A26C61B1F00F56019 /* Sources */,
+				0734308B26C61B1F00F56019 /* Frameworks */,
+				0734308C26C61B1F00F56019 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VexillumIntentUI;
+			productName = VexillumIntentUI;
+			productReference = 0734308E26C61B1F00F56019 /* VexillumIntentUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		0734312926C640DE00F56019 /* VexillumIntent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0734313326C640DE00F56019 /* Build configuration list for PBXNativeTarget "VexillumIntent" */;
+			buildPhases = (
+				0734312626C640DE00F56019 /* Sources */,
+				0734312726C640DE00F56019 /* Frameworks */,
+				0734312826C640DE00F56019 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VexillumIntent;
+			productName = VexillumIntent;
+			productReference = 0734312A26C640DE00F56019 /* VexillumIntent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0746890B26B900D60066D145 /* Vexillum */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0746893626B900D80066D145 /* Build configuration list for PBXNativeTarget "Vexillum" */;
@@ -332,6 +476,8 @@
 			);
 			dependencies = (
 				0734307F26C5EE7200F56019 /* PBXTargetDependency */,
+				0734309926C61B1F00F56019 /* PBXTargetDependency */,
+				0734313126C640DE00F56019 /* PBXTargetDependency */,
 			);
 			name = Vexillum;
 			packageProductDependencies = (
@@ -389,6 +535,13 @@
 					0734307426C5EE7100F56019 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
+					0734308D26C61B1F00F56019 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					0734312926C640DE00F56019 = {
+						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
+					};
 					0746890B26B900D60066D145 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -422,6 +575,8 @@
 				0746892126B900D80066D145 /* VexillumTests */,
 				0746892C26B900D80066D145 /* VexillumUITests */,
 				0734307426C5EE7100F56019 /* FlagWidgetExtension */,
+				0734308D26C61B1F00F56019 /* VexillumIntentUI */,
+				0734312926C640DE00F56019 /* VexillumIntent */,
 			);
 		};
 /* End PBXProject section */
@@ -433,6 +588,23 @@
 			files = (
 				0734308726C5FBD200F56019 /* Assets.xcassets in Resources */,
 				0734307C26C5EE7200F56019 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0734308C26C61B1F00F56019 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				073430BF26C6212200F56019 /* Assets.xcassets in Resources */,
+				0734309626C61B1F00F56019 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0734312826C640DE00F56019 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0734314926C6422C00F56019 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +667,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0734308A26C61B1F00F56019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				073430C126C625CA00F56019 /* UIView+Extended.swift in Sources */,
+				073430B126C61C1500F56019 /* Intents.intentdefinition in Sources */,
+				0734309326C61B1F00F56019 /* IntentViewController.swift in Sources */,
+				073430BE26C61F2500F56019 /* SplitMix64.swift in Sources */,
+				073430BD26C61F1D00F56019 /* Country.swift in Sources */,
+				073430BB26C61F1100F56019 /* CountryProvider.swift in Sources */,
+				0734314826C641DF00F56019 /* FlagIntentResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0734312626C640DE00F56019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0734314026C6416F00F56019 /* Intents.intentdefinition in Sources */,
+				0734314526C641B800F56019 /* CountryProvider.swift in Sources */,
+				0734314426C641B500F56019 /* Country.swift in Sources */,
+				0734313E26C6416300F56019 /* FlagOfTheDayIntentHandler.swift in Sources */,
+				0734313F26C6416300F56019 /* IntentHandler.swift in Sources */,
+				0734313B26C6416300F56019 /* FlagIntentResponse.swift in Sources */,
+				0734314226C641AE00F56019 /* SplitMix64.swift in Sources */,
+				0734313C26C6416300F56019 /* GetFlagIntentHandler.swift in Sources */,
+				0734313D26C6416300F56019 /* FlagData+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0746890826B900D60066D145 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -502,6 +704,7 @@
 				07A7602926BA4248006437E4 /* CountryViewController.swift in Sources */,
 				07A7602D26BA48E5006437E4 /* ReusableView.swift in Sources */,
 				0746894126B902580066D145 /* Country.swift in Sources */,
+				073430B026C61C1500F56019 /* Intents.intentdefinition in Sources */,
 				07A7603126BA4A8C006437E4 /* FlagListTableViewCell.swift in Sources */,
 				0746894726B906430066D145 /* CountryProvider.swift in Sources */,
 				0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */,
@@ -544,6 +747,16 @@
 			target = 0734307426C5EE7100F56019 /* FlagWidgetExtension */;
 			targetProxy = 0734307E26C5EE7200F56019 /* PBXContainerItemProxy */;
 		};
+		0734309926C61B1F00F56019 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0734308D26C61B1F00F56019 /* VexillumIntentUI */;
+			targetProxy = 0734309826C61B1F00F56019 /* PBXContainerItemProxy */;
+		};
+		0734313126C640DE00F56019 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0734312926C640DE00F56019 /* VexillumIntent */;
+			targetProxy = 0734313026C640DE00F56019 /* PBXContainerItemProxy */;
+		};
 		0746892426B900D80066D145 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0746890B26B900D60066D145 /* Vexillum */;
@@ -557,6 +770,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0734309426C61B1F00F56019 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0734309526C61B1F00F56019 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		0746891526B900D60066D145 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -617,6 +838,87 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		0734309C26C61B1F00F56019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DS63W44KSD;
+				INFOPLIST_FILE = VexillumIntentUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.richardrobinson.Vexillum.VexillumIntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0734309D26C61B1F00F56019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DS63W44KSD;
+				INFOPLIST_FILE = VexillumIntentUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.richardrobinson.Vexillum.VexillumIntentUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0734313426C640DE00F56019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DS63W44KSD;
+				INFOPLIST_FILE = VexillumIntent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.richardrobinson.Vexillum.VexillumIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0734313526C640DE00F56019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DS63W44KSD;
+				INFOPLIST_FILE = VexillumIntent/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.richardrobinson.Vexillum.VexillumIntent;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -742,6 +1044,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Vexillum/Vexillum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DS63W44KSD;
 				INFOPLIST_FILE = Vexillum/Info.plist;
@@ -763,6 +1066,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Vexillum/Vexillum.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DS63W44KSD;
 				INFOPLIST_FILE = Vexillum/Info.plist;
@@ -870,6 +1174,24 @@
 			buildConfigurations = (
 				0734308226C5EE7200F56019 /* Debug */,
 				0734308326C5EE7200F56019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0734309B26C61B1F00F56019 /* Build configuration list for PBXNativeTarget "VexillumIntentUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0734309C26C61B1F00F56019 /* Debug */,
+				0734309D26C61B1F00F56019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0734313326C640DE00F56019 /* Build configuration list for PBXNativeTarget "VexillumIntent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0734313426C640DE00F56019 /* Debug */,
+				0734313526C640DE00F56019 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
