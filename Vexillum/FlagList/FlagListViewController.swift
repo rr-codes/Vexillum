@@ -79,7 +79,9 @@ class FlagListViewController: UITableViewController {
   }
 
   @objc private func onRandomCountryButtonTap() {
-
+    let country = self.viewModel.randomCountry()
+    let countryViewController = CountryViewController(country: country)
+    self.navigationController!.pushViewController(countryViewController, animated: true)
   }
 }
 

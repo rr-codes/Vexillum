@@ -22,6 +22,11 @@ class CountryProvider {
     self.allCountries = decoded?.sorted() ?? []
   }
 
+  // swiftlint:disable identifier_name
+  func find(countryWithId id: Country.ID) -> Country {
+    self.allCountries.first { $0.id == id }!
+  }
+
   func countryOfTheDay(for date: Date) -> Country {
     let today = Calendar.current.ordinality(of: .day, in: .year, for: date)!
     var rng = SplitMix64(seed: UInt64(today))

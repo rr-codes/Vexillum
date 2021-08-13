@@ -61,4 +61,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // to restore the scene back to its current state.
   }
 
+  func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    guard let window = self.window?.rootViewController as? UINavigationController else {
+      fatalError()
+    }
+
+    for context in URLContexts where context.url.scheme == "com.richardrobinson.vexillum" {
+      let countryId = context.url.lastPathComponent
+      let country = CountryProvider.shared.find(countryWithId: countryId)
+
+      let countryViewController = CountryViewController(country: country)
+
+      window.popToRootViewController(animated: false)
+      window.pushViewController(countryViewController, animated: true)
+    }
+  }
 }

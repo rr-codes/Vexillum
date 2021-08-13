@@ -10,6 +10,15 @@
 		07249A3826C4CEC500DE3278 /* CountryLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07249A3726C4CEC500DE3278 /* CountryLocationCell.swift */; };
 		072AED1626C3945A006650F6 /* LinkFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072AED1526C3945A006650F6 /* LinkFooterView.swift */; };
 		072AED1826C39691006650F6 /* SectionSymbolHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072AED1726C39691006650F6 /* SectionSymbolHeaderView.swift */; };
+		0734307626C5EE7200F56019 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0734305D26C5ED2700F56019 /* WidgetKit.framework */; };
+		0734307726C5EE7200F56019 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0734305F26C5ED2700F56019 /* SwiftUI.framework */; };
+		0734307A26C5EE7200F56019 /* FlagWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734307926C5EE7200F56019 /* FlagWidget.swift */; };
+		0734307C26C5EE7200F56019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0734307B26C5EE7200F56019 /* Assets.xcassets */; };
+		0734308026C5EE7200F56019 /* FlagWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0734307526C5EE7100F56019 /* FlagWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0734308426C5EE7C00F56019 /* SplitMix64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894926B906FB0066D145 /* SplitMix64.swift */; };
+		0734308526C5EE7F00F56019 /* CountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894626B906430066D145 /* CountryProvider.swift */; };
+		0734308626C5EE8200F56019 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894026B902580066D145 /* Country.swift */; };
+		0734308726C5FBD200F56019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0746891826B900D70066D145 /* Assets.xcassets */; };
 		0746891026B900D60066D145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746890F26B900D60066D145 /* AppDelegate.swift */; };
 		0746891226B900D60066D145 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746891126B900D60066D145 /* SceneDelegate.swift */; };
 		0746891426B900D60066D145 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746891326B900D60066D145 /* ViewController.swift */; };
@@ -34,6 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0734307E26C5EE7200F56019 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0746890426B900D60066D145 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0734307426C5EE7100F56019;
+			remoteInfo = FlagWidgetExtension;
+		};
 		0746892326B900D80066D145 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0746890426B900D60066D145 /* Project object */;
@@ -50,10 +66,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0734306926C5ED2800F56019 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0734308026C5EE7200F56019 /* FlagWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		07249A3726C4CEC500DE3278 /* CountryLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLocationCell.swift; sourceTree = "<group>"; };
 		072AED1526C3945A006650F6 /* LinkFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkFooterView.swift; sourceTree = "<group>"; };
 		072AED1726C39691006650F6 /* SectionSymbolHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionSymbolHeaderView.swift; sourceTree = "<group>"; };
+		0734305D26C5ED2700F56019 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		0734305F26C5ED2700F56019 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		0734307526C5EE7100F56019 /* FlagWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FlagWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0734307926C5EE7200F56019 /* FlagWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagWidget.swift; sourceTree = "<group>"; };
+		0734307B26C5EE7200F56019 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0734307D26C5EE7200F56019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0746890C26B900D60066D145 /* Vexillum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vexillum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0746890F26B900D60066D145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0746891126B900D60066D145 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +119,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0734307226C5EE7100F56019 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0734307726C5EE7200F56019 /* SwiftUI.framework in Frameworks */,
+				0734307626C5EE7200F56019 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0746890926B900D60066D145 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,12 +153,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0734305C26C5ED2700F56019 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0734305D26C5ED2700F56019 /* WidgetKit.framework */,
+				0734305F26C5ED2700F56019 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0734307826C5EE7200F56019 /* FlagWidget */ = {
+			isa = PBXGroup;
+			children = (
+				0734307926C5EE7200F56019 /* FlagWidget.swift */,
+				0734307B26C5EE7200F56019 /* Assets.xcassets */,
+				0734307D26C5EE7200F56019 /* Info.plist */,
+			);
+			path = FlagWidget;
+			sourceTree = "<group>";
+		};
 		0746890326B900D60066D145 = {
 			isa = PBXGroup;
 			children = (
 				0746890E26B900D60066D145 /* Vexillum */,
 				0746892526B900D80066D145 /* VexillumTests */,
 				0746893026B900D80066D145 /* VexillumUITests */,
+				0734307826C5EE7200F56019 /* FlagWidget */,
+				0734305C26C5ED2700F56019 /* Frameworks */,
 				0746890D26B900D60066D145 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -124,6 +190,7 @@
 				0746890C26B900D60066D145 /* Vexillum.app */,
 				0746892226B900D80066D145 /* VexillumTests.xctest */,
 				0746892D26B900D80066D145 /* VexillumUITests.xctest */,
+				0734307526C5EE7100F56019 /* FlagWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +301,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0734307426C5EE7100F56019 /* FlagWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0734308126C5EE7200F56019 /* Build configuration list for PBXNativeTarget "FlagWidgetExtension" */;
+			buildPhases = (
+				0734307126C5EE7100F56019 /* Sources */,
+				0734307226C5EE7100F56019 /* Frameworks */,
+				0734307326C5EE7100F56019 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlagWidgetExtension;
+			productName = FlagWidgetExtension;
+			productReference = 0734307526C5EE7100F56019 /* FlagWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		0746890B26B900D60066D145 /* Vexillum */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0746893626B900D80066D145 /* Build configuration list for PBXNativeTarget "Vexillum" */;
@@ -242,10 +326,12 @@
 				0746890926B900D60066D145 /* Frameworks */,
 				0746890A26B900D60066D145 /* Resources */,
 				07249A3626C4CB9500DE3278 /* Lint */,
+				0734306926C5ED2800F56019 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0734307F26C5EE7200F56019 /* PBXTargetDependency */,
 			);
 			name = Vexillum;
 			packageProductDependencies = (
@@ -300,6 +386,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					0734307426C5EE7100F56019 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					0746890B26B900D60066D145 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -332,11 +421,21 @@
 				0746890B26B900D60066D145 /* Vexillum */,
 				0746892126B900D80066D145 /* VexillumTests */,
 				0746892C26B900D80066D145 /* VexillumUITests */,
+				0734307426C5EE7100F56019 /* FlagWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0734307326C5EE7100F56019 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0734308726C5FBD200F56019 /* Assets.xcassets in Resources */,
+				0734307C26C5EE7200F56019 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0746890A26B900D60066D145 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -385,6 +484,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0734307126C5EE7100F56019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0734308626C5EE8200F56019 /* Country.swift in Sources */,
+				0734308526C5EE7F00F56019 /* CountryProvider.swift in Sources */,
+				0734307A26C5EE7200F56019 /* FlagWidget.swift in Sources */,
+				0734308426C5EE7C00F56019 /* SplitMix64.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0746890826B900D60066D145 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -429,6 +539,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0734307F26C5EE7200F56019 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0734307426C5EE7100F56019 /* FlagWidgetExtension */;
+			targetProxy = 0734307E26C5EE7200F56019 /* PBXContainerItemProxy */;
+		};
 		0746892426B900D80066D145 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0746890B26B900D60066D145 /* Vexillum */;
@@ -461,6 +576,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0734308226C5EE7200F56019 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DS63W44KSD;
+				INFOPLIST_FILE = FlagWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.richardrobinson.Vexillum.FlagWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		0734308326C5EE7200F56019 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DS63W44KSD;
+				INFOPLIST_FILE = FlagWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.richardrobinson.Vexillum.FlagWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		0746893426B900D80066D145 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -580,6 +739,7 @@
 		0746893726B900D80066D145 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -600,6 +760,7 @@
 		0746893826B900D80066D145 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -704,6 +865,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0734308126C5EE7200F56019 /* Build configuration list for PBXNativeTarget "FlagWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0734308226C5EE7200F56019 /* Debug */,
+				0734308326C5EE7200F56019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0746890726B900D60066D145 /* Build configuration list for PBXProject "Vexillum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
