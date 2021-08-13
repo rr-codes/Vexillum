@@ -14,9 +14,14 @@ class FlagOfTheDayIntentHandler: NSObject, FlagOfTheDayIntentHandling {
   private let countryProvider = CountryProvider.shared
 
   func handle(intent: FlagOfTheDayIntent, completion: @escaping (FlagOfTheDayIntentResponse) -> Void) {
-    let country = self.countryProvider.countryOfTheDay(for: Date())
-    let flagData = FlagData(for: country)
+    let userActivity = NSUserActivity(activityType: String(describing: FlagOfTheDayIntent.self))
 
-    completion(.success(flag: flagData))
+    let country = self.countryProvider.countryOfTheDay(for: Date())
+
+    userActivity.userInfo = ["countryId": country.id]
+    let successResponse = FlagOfTheDayIntentResponse(code: .success, userActivity: userActivity)
+    successResponse.flag = FlagData(for: country)
+
+    completion(successResponse)
   }
 }

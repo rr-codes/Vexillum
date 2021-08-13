@@ -14,16 +14,28 @@ class GetFlagIntentHandler: NSObject, GetFlagIntentHandling {
   private let countryProvider = CountryProvider.shared
 
   func resolveCountry(for intent: GetFlagIntent, with completion: @escaping (INStringResolutionResult) -> Void) {
-    if let countryName = intent.country {
-      completion(.success(with: countryName))
-    } else {
+    guard let countryName = intent.country else {
       completion(.needsValue())
+      return
+    }
+
+    let matchingCountryNames = self.countryProvider.allCountries
+      .filter { $0.name.contains(query: countryName) }
+      .map(\.name.common)
+
+    switch matchingCountryNames.count {
+    case 0: completion(.needsValue())
+    case 1: completion(.success(with: matchingCountryNames.first!))
+    default: completion(.disambiguation(with: matchingCountryNames))
     }
   }
 
   func handle(intent: GetFlagIntent, completion: @escaping (GetFlagIntentResponse) -> Void) {
+    let userActivity = NSUserActivity(activityType: String(describing: GetFlagIntent.self))
+    let failedResponse = GetFlagIntentResponse(code: .failure, userActivity: userActivity)
+
     guard let countryName = intent.country else {
-      completion(GetFlagIntentResponse(code: .failure, userActivity: nil))
+      completion(failedResponse)
       return
     }
 
@@ -32,10 +44,14 @@ class GetFlagIntentHandler: NSObject, GetFlagIntentHandling {
     }
 
     guard let country = country else {
-      completion(GetFlagIntentResponse(code: .failure, userActivity: nil))
+      completion(failedResponse)
       return
     }
 
-    completion(.success(flag: FlagData(for: country)))
+    userActivity.userInfo = ["countryId": country.id]
+    let successResponse = GetFlagIntentResponse(code: .success, userActivity: userActivity)
+    successResponse.flag = FlagData(for: country)
+
+    completion(successResponse)
   }
 }

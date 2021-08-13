@@ -73,8 +73,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     case CSSearchableItemActionType:
       self.handleSearchableItemAction(from: userActivity)
 
+    case "GetFlagIntent", "FlagOfTheDayIntent":
+      self.handleFlagIntentAction(from: userActivity)
+
     default:
-      fatalError()
+      fatalError("Invalid activity type: \(userActivity.activityType)")
     }
   }
 
@@ -85,9 +88,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
   }
 
+  private func handleFlagIntentAction(from userActivity: NSUserActivity) {
+    guard let countryId = userActivity.userInfo?["countryId"] as? String else {
+      return
+    }
+
+    self.openCountryView(forCountryWithId: countryId)
+  }
+
   private func handleSearchableItemAction(from userActivity: NSUserActivity) {
     guard let countryId = userActivity.userInfo?[CSSearchableItemActivityIdentifier] as? String else {
-      fatalError()
+      return
     }
 
     self.openCountryView(forCountryWithId: countryId)
