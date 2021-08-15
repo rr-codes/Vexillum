@@ -31,12 +31,7 @@ class LinkFooterView: UITableViewHeaderFooterView, ReusableView {
 
     self.contentView.addSubview(self.textView)
 
-    NSLayoutConstraint.activate([
-      self.textView.leadingAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.leadingAnchor),
-      self.textView.topAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.topAnchor),
-      self.textView.trailingAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.trailingAnchor),
-      self.textView.bottomAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.bottomAnchor)
-    ])
+    self.textView.constrain(to: self.contentView.layoutMarginsGuide, on: .edges)
   }
 
   func bind(to text: String, link: URL) {

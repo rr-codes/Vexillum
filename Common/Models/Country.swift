@@ -61,6 +61,12 @@ extension Country: Comparable {
   }
 }
 
+extension Country: Equatable {
+  static func == (lhs: Country, rhs: Country) -> Bool {
+    lhs.id == rhs.id
+  }
+}
+
 extension Country: Identifiable {
   // swiftlint:disable:next identifier_name
   var id: String {

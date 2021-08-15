@@ -18,7 +18,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
 
     self.view.addSubview(self.imageView)
 
-    self.imageView.pinEdges(to: self.view)
+    self.imageView.constrain(to: self.view, on: .edges)
   }
 
   // MARK: - INUIHostedViewControlling

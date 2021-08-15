@@ -24,10 +24,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // (see `application:configurationForConnectingSceneSession` instead).
     guard let scene = (scene as? UIWindowScene) else { return }
 
-    let rootView = FlagListViewController()
+    let rootView = QuizViewController()
+    rootView.viewModel = QuizViewModel(using: .shared)
+
 
     let window = UIWindow(windowScene: scene)
-    window.rootViewController = UINavigationController(rootViewController: rootView)
+    window.rootViewController = rootView
 
     self.window = window
     window.makeKeyAndVisible()

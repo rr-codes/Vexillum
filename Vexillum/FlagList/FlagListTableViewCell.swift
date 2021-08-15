@@ -23,7 +23,7 @@ class FlagListTableViewCell: UITableViewCell, BindableCell, ReusableView {
 
     self.contentView.addSubview(self.flagImageView)
 
-    self.flagImageView.pinEdges(to: self.contentView)
+    self.flagImageView.constrain(to: self.contentView, on: .edges)
   }
 
   @available(*, unavailable)

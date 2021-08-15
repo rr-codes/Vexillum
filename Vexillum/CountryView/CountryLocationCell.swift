@@ -26,11 +26,8 @@ class CountryLocationCell: UITableViewCell, BindableCell, ReusableView {
 
     self.contentView.addSubview(self.mapView)
 
-    NSLayoutConstraint.activate([
-      self.contentView.heightAnchor.constraint(equalToConstant: 200.0)
-    ])
-
-    self.mapView.pinEdges(to: self.contentView)
+    self.contentView.constrain(to: 200, on: .height)
+    self.mapView.constrain(to: self.contentView, on: .edges)
   }
 
   @available(*, unavailable)

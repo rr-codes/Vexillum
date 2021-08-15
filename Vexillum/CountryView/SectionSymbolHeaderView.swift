@@ -34,10 +34,9 @@ class SectionSymbolHeaderView: UITableViewHeaderFooterView, ReusableView {
     self.contentView.addSubview(self.imageView)
     self.contentView.addSubview(self.label)
 
+    self.imageView.constrain(to: self.contentView.layoutMarginsGuide, on: [.leading, .vertical])
+
     NSLayoutConstraint.activate([
-      self.imageView.leadingAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.leadingAnchor),
-      self.imageView.topAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.topAnchor),
-      self.imageView.bottomAnchor.constraint(equalTo: self.contentView.layoutMarginsGuide.bottomAnchor),
       self.imageView.firstBaselineAnchor.constraint(equalTo: self.label.firstBaselineAnchor),
       self.label.leadingAnchor.constraint(equalTo: self.imageView.trailingAnchor, constant: 3.0)
     ])

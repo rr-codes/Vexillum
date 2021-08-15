@@ -88,6 +88,14 @@ extension CountryViewController {
     return view
   }
 
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    UITableView.automaticDimension
+  }
+
+  override func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+    20.0
+  }
+
   override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
     guard let section = Section(rawValue: section) else {
       fatalError()
