@@ -11,10 +11,10 @@ import UIKit
 class QuizQuestionOptionView: UIView {
   private let label = UILabel()
 
-  let country: Country
+  let option: QuizQuestion.Option
 
-  init(country: Country) {
-    self.country = country
+  init(option: QuizQuestion.Option) {
+    self.option = option
     super.init(frame: .zero)
 
     self.label.apply(self.configureLabel(_:))
@@ -43,7 +43,7 @@ class QuizQuestionOptionView: UIView {
   private func configureLabel(_ label: UILabel) {
     label.font = .systemFont(ofSize: 20.0, weight: .semibold)
     label.textColor = .label
-    label.text = self.country.name.common
+    label.text = self.option.name
     label.textAlignment = .center
     label.lineBreakMode = .byWordWrapping
     label.numberOfLines = 2

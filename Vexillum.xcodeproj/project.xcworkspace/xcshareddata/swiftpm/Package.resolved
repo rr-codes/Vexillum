@@ -2,12 +2,39 @@
   "object": {
     "pins": [
       {
+        "package": "ConfettiView",
+        "repositoryURL": "https://github.com/NSHipster/ConfettiView",
+        "state": {
+          "branch": null,
+          "revision": "fcd1d3718116396df21d67af0826a4c6573f9350",
+          "version": "0.3.1"
+        }
+      },
+      {
         "package": "PreviewView",
         "repositoryURL": "https://github.com/theoriginalbit/PreviewView",
         "state": {
           "branch": null,
           "revision": "64a4adc4ed14d3cb7d3c6e721bfa6d37494cf66f",
           "version": "2.0.0"
+        }
+      },
+      {
+        "package": "Shiny",
+        "repositoryURL": "https://github.com/maustinstar/shiny.git",
+        "state": {
+          "branch": null,
+          "revision": "8bb38bf8122d5b144ac0c09258c30aab46dcac7e",
+          "version": "0.0.1"
+        }
+      },
+      {
+        "package": "SwiftConfettiView",
+        "repositoryURL": "https://github.com/theoriginalbit/SwiftConfettiView.git",
+        "state": {
+          "branch": null,
+          "revision": "70801fc20faf34d136da4985c2b47f4eb4725bdf",
+          "version": "0.2.0"
         }
       }
     ]

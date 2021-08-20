@@ -7,21 +7,18 @@
 
 import Foundation
 
-struct Quiz {
-  struct Question: Equatable, Identifiable {
-    let id = UUID()
-
-    let country: Country
-    let alternateCountries: [Country]
-
-    var allOptions: [Country] {
-      (self.alternateCountries + [country]).shuffled()
-    }
-
-    static func == (_ lhs: Self, _ rhs: Self) -> Bool {
-      lhs.id == rhs.id
-    }
+struct QuizQuestion: Equatable {
+  struct Option: Equatable, Identifiable {
+    let id: Country.ID
+    let flagImageName: String
+    let name: String
+    let flag: String
   }
 
-  let questions: [Question]
+  let correctOption: Option
+  let alternateOptions: [Option]
+
+  var allOptions: [Option] {
+    (self.alternateOptions + [self.correctOption]).shuffled()
+  }
 }

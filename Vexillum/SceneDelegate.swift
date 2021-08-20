@@ -24,12 +24,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // (see `application:configurationForConnectingSceneSession` instead).
     guard let scene = (scene as? UIWindowScene) else { return }
 
-    let rootView = QuizViewController()
-    rootView.viewModel = QuizViewModel(using: .shared)
+    let quizVc = QuizHomeViewController().apply {
+      $0.tabBarItem = UITabBarItem(title: "Quiz", image: UIImage(systemName: "gamecontroller"), tag: 0)
+      $0.tabBarItem.selectedImage = UIImage(systemName: "gamecontroller.fill")
+    }
 
+    let flagListVc = FlagListViewController().apply {
+      $0.tabBarItem = UITabBarItem(title: "Flags", image: UIImage(systemName: "flag"), tag: 1)
+      $0.tabBarItem.selectedImage = UIImage(systemName: "flag.fill")
+    }
+
+    let quizViewNavigationController = UINavigationController(rootViewController: quizVc)
+    let mainViewNavigationController = UINavigationController(rootViewController: flagListVc)
+
+    let tabBarController = UITabBarController()
+    tabBarController.viewControllers = [mainViewNavigationController, quizViewNavigationController]
 
     let window = UIWindow(windowScene: scene)
-    window.rootViewController = rootView
+    window.rootViewController = tabBarController
 
     self.window = window
     window.makeKeyAndVisible()

@@ -13,17 +13,18 @@ import SwiftUI
 class QuizQuestionViewController: UIViewController {
   private let feedbackGenerator = UINotificationFeedbackGenerator()
 
-  private var selectedCountry: Country?
+  private var isLocked = false
 
-  var questionIndex: Int!
   var viewModel: QuizViewModel!
 
-  var questionData: Quiz.Question {
-    self.viewModel.quiz.questions[self.questionIndex]
+  convenience init(using viewModel: QuizViewModel) {
+    self.init()
+
+    self.viewModel = viewModel
   }
 
   override func viewDidLoad() {
-    let image = UIImage(named: questionData.country.flagImageName)!
+    let image = self.viewModel.correctFlagImage()
     let imageView = UIImageView(image: image).apply(self.configureImageView(_:))
 
     let width = self.view.layoutMarginsGuide.layoutFrame.width - 32
@@ -38,7 +39,7 @@ class QuizQuestionViewController: UIViewController {
     self.view.addSubview(label)
 
     let grid = GridView(
-      self.questionData.allOptions,
+      self.viewModel.options(),
       numberOfColumns: 2,
       spacing: 10.0,
       provider: self.optionView(for:)
@@ -66,21 +67,22 @@ class QuizQuestionViewController: UIViewController {
   }
 
   @objc private func handleOptionTap(sender: UITapGestureRecognizer) {
-    guard self.selectedCountry == nil else {
+    guard !self.isLocked else {
       return
     }
+    self.isLocked = true
 
     // swiftlint:disable:next force_cast
     let view = sender.view as! QuizQuestionOptionView
-    let isCorrect = self.questionData.country == view.country
-    self.selectedCountry = view.country
+    let isCorrect = self.viewModel.isCorrect(selectedOption: view.option)
 
     view.setSelected(isCorrect: isCorrect)
+    self.viewModel.addAnswer(view.option)
 
     self.feedbackGenerator.notificationOccurred(isCorrect ? .success : .error)
 
     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      self.viewModel.currentQuestionIndex += 1
+      self.viewModel.goToNextQuestion()
     }
   }
 
@@ -105,8 +107,8 @@ class QuizQuestionViewController: UIViewController {
     label.font = .preferredFont(forTextStyle: .headline)
   }
 
-  private func optionView(for country: Country) -> QuizQuestionOptionView {
-    let view = QuizQuestionOptionView(country: country)
+  private func optionView(for option: QuizQuestion.Option) -> QuizQuestionOptionView {
+    let view = QuizQuestionOptionView(option: option)
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleOptionTap(sender:)))
 
     view.addGestureRecognizer(tapGestureRecognizer)
@@ -123,17 +125,9 @@ struct QuizQuestionViewController_Previews: PreviewProvider {
     }!
   }
 
-  static let preparedVc: QuizQuestionViewController = {
-    let result = QuizQuestionViewController()
-    result.viewModel = .init(using: .shared)
-    result.questionIndex = 0
-
-    return result
-  }()
-
   static var previews: some View {
     Preview(
-      for: preparedVc,
+      for: QuizQuestionViewController(using: .init()),
       navigationControllerStyle: .none
     )
     .edgesIgnoringSafeArea(.all).previewDevice(nil)

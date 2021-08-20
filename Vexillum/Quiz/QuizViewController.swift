@@ -10,10 +10,14 @@ import UIKit
 import Combine
 
 class QuizViewController: UIViewController {
-  var viewModel: QuizViewModel!
+  private let viewModel = QuizViewModel()
   private var cancellables = Set<AnyCancellable>()
 
-  var pageController: UIPageViewController!
+  private let pageController = UIPageViewController(
+    transitionStyle: .scroll,
+    navigationOrientation: .horizontal,
+    options: nil
+  )
 
   private let progressBar = LinearProgressView().apply {
     $0.cornerRadius = 4.0
@@ -22,25 +26,8 @@ class QuizViewController: UIViewController {
     $0.translatesAutoresizingMaskIntoConstraints = false
   }
 
-  private func updateCurrentViewController(index: Int) {
-    let questionVc = QuizQuestionViewController().apply {
-      $0.viewModel = self.viewModel
-      $0.questionIndex = index
-    }
-
-    self.pageController.setViewControllers([questionVc], direction: .forward, animated: true)
-    self.progressBar.progress = CGFloat(index) / CGFloat(self.viewModel.quiz.questions.count)
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    self.pageController = UIPageViewController(
-      transitionStyle: .scroll,
-      navigationOrientation: .horizontal,
-      options: nil
-    )
-    self.pageController.delegate = self
 
     self.view.addSubview(self.progressBar)
 
@@ -49,12 +36,24 @@ class QuizViewController: UIViewController {
 
     self.view.backgroundColor = .systemBackground
 
-    self.updateCurrentViewController(index: 0)
+    if let currentQuestion = self.viewModel.currentQuestion {
+      self.updateCurrentViewController(isQuizComplete: false)
+    }
+//
+//    self.viewModel.$currentQuestion
+//      .sink { [weak self] in
+//        print(self?.viewModel.currentQuestion)
+//        print($0)
+//        self?.updateCurrentViewController(for: $0)
+//      }
+//      .store(in: &self.cancellables)
 
-    self.viewModel.$currentQuestionIndex
-      .sink { [weak self] in self?.updateCurrentViewController(index: $0) }
-      .store(in: &self.cancellables)
+    self.viewModel.onCurrentQuestionChanged = self.updateCurrentViewController(isQuizComplete:)
 
+    self.setupConstraints()
+  }
+
+  private func setupConstraints() {
     self.pageController.view.translatesAutoresizingMaskIntoConstraints = false
 
     self.progressBar.constrain(to: self.view.layoutMarginsGuide, on: [.top, .horizontal])
@@ -65,8 +64,17 @@ class QuizViewController: UIViewController {
       self.pageController.view.topAnchor.constraint(equalTo: self.progressBar.bottomAnchor)
     ])
   }
-}
 
-extension QuizViewController: UIPageViewControllerDelegate {
+  private func updateCurrentViewController(isQuizComplete: Bool) {
+    guard !isQuizComplete else {
+      let completeVc = QuizCompleteViewController(using: self.viewModel)
+      self.pageController.setViewControllers([completeVc], direction: .forward, animated: true)
+      return
+    }
 
+    let questionVc = QuizQuestionViewController(using: self.viewModel)
+
+    self.pageController.setViewControllers([questionVc], direction: .forward, animated: true)
+    self.progressBar.progress = self.viewModel.progress()
+  }
 }

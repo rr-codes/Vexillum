@@ -43,6 +43,9 @@
 		0734314526C641B800F56019 /* CountryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894626B906430066D145 /* CountryProvider.swift */; };
 		0734314826C641DF00F56019 /* FlagIntentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0734313626C6416200F56019 /* FlagIntentResponse.swift */; };
 		0734314926C6422C00F56019 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0746891826B900D70066D145 /* Assets.xcassets */; };
+		073F259F26C9E7B90084DAA6 /* QuizHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F259E26C9E7B90084DAA6 /* QuizHomeViewController.swift */; };
+		073F25A226C9F5F50084DAA6 /* QuizCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073F25A126C9F5F50084DAA6 /* QuizCompleteViewController.swift */; };
+		073F25A526C9FB110084DAA6 /* Shiny in Frameworks */ = {isa = PBXBuildFile; productRef = 073F25A426C9FB110084DAA6 /* Shiny */; };
 		0746891026B900D60066D145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746890F26B900D60066D145 /* AppDelegate.swift */; };
 		0746891226B900D60066D145 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746891126B900D60066D145 /* SceneDelegate.swift */; };
 		0746891426B900D60066D145 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746891326B900D60066D145 /* ViewController.swift */; };
@@ -57,6 +60,8 @@
 		0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746894C26B907F70066D145 /* FlagListViewModel.swift */; };
 		0746895326B90A8D0066D145 /* FlagListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0746895226B90A8D0066D145 /* FlagListViewController.swift */; };
 		0746895626B9150D0066D145 /* PreviewView in Frameworks */ = {isa = PBXBuildFile; productRef = 0746895526B9150D0066D145 /* PreviewView */; };
+		075C577626CB699800CB154C /* ConfettiView in Frameworks */ = {isa = PBXBuildFile; productRef = 075C577526CB699800CB154C /* ConfettiView */; };
+		075C577926CB7D4100CB154C /* SwiftConfettiView in Frameworks */ = {isa = PBXBuildFile; productRef = 075C577826CB7D4100CB154C /* SwiftConfettiView */; };
 		077D6D1D26C3620A004AA28E /* CountryViewDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D6D1C26C3620A004AA28E /* CountryViewDetailCell.swift */; };
 		077D6D1F26C364FB004AA28E /* Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077D6D1E26C364FB004AA28E /* Sections.swift */; };
 		0785EF5926C24D88006C3350 /* BindableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0785EF5826C24D88006C3350 /* BindableCell.swift */; };
@@ -72,6 +77,7 @@
 		07ACAD4B26C9ADAD00FC37DE /* Applyable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACAD4A26C9ADAD00FC37DE /* Applyable.swift */; };
 		07ACAD4D26C9B16700FC37DE /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACAD4C26C9B16700FC37DE /* LinearProgressView.swift */; };
 		07D47EC426C754DB00005544 /* QuizQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D47EC326C754DB00005544 /* QuizQuestionViewController.swift */; };
+		07EB5E8B26CCC73F0018F540 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB5E8A26CCC73F0018F540 /* StyledButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +159,8 @@
 		0734313826C6416300F56019 /* FlagData+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FlagData+Extensions.swift"; sourceTree = "<group>"; };
 		0734313926C6416300F56019 /* FlagOfTheDayIntentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlagOfTheDayIntentHandler.swift; sourceTree = "<group>"; };
 		0734313A26C6416300F56019 /* IntentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		073F259E26C9E7B90084DAA6 /* QuizHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizHomeViewController.swift; sourceTree = "<group>"; };
+		073F25A126C9F5F50084DAA6 /* QuizCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCompleteViewController.swift; sourceTree = "<group>"; };
 		0746890C26B900D60066D145 /* Vexillum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vexillum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0746890F26B900D60066D145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0746891126B900D60066D145 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 		07ACAD4A26C9ADAD00FC37DE /* Applyable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Applyable.swift; sourceTree = "<group>"; };
 		07ACAD4C26C9B16700FC37DE /* LinearProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressView.swift; sourceTree = "<group>"; };
 		07D47EC326C754DB00005544 /* QuizQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewController.swift; sourceTree = "<group>"; };
+		07EB5E8A26CCC73F0018F540 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,7 +228,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073F25A526C9FB110084DAA6 /* Shiny in Frameworks */,
+				075C577926CB7D4100CB154C /* SwiftConfettiView in Frameworks */,
 				0746895626B9150D0066D145 /* PreviewView in Frameworks */,
+				075C577626CB699800CB154C /* ConfettiView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +307,22 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		073F259D26C9E7AB0084DAA6 /* QuizHome */ = {
+			isa = PBXGroup;
+			children = (
+				073F259E26C9E7B90084DAA6 /* QuizHomeViewController.swift */,
+			);
+			path = QuizHome;
+			sourceTree = "<group>";
+		};
+		073F25A026C9F5A50084DAA6 /* QuizCompleteView */ = {
+			isa = PBXGroup;
+			children = (
+				073F25A126C9F5F50084DAA6 /* QuizCompleteViewController.swift */,
+			);
+			path = QuizCompleteView;
+			sourceTree = "<group>";
+		};
 		0746890326B900D60066D145 = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +355,8 @@
 		0746890E26B900D60066D145 /* Vexillum */ = {
 			isa = PBXGroup;
 			children = (
+				073F25A026C9F5A50084DAA6 /* QuizCompleteView */,
+				073F259D26C9E7AB0084DAA6 /* QuizHome */,
 				07ACAD4326C8E35000FC37DE /* Quiz */,
 				07D47EC226C754C300005544 /* QuizQuestion */,
 				073430FF26C63A9600F56019 /* Vexillum.entitlements */,
@@ -385,6 +415,7 @@
 			children = (
 				0785EF5826C24D88006C3350 /* BindableCell.swift */,
 				07ACAD3F26C8E08500FC37DE /* GridView.swift */,
+				07EB5E8A26CCC73F0018F540 /* StyledButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -522,6 +553,9 @@
 			name = Vexillum;
 			packageProductDependencies = (
 				0746895526B9150D0066D145 /* PreviewView */,
+				073F25A426C9FB110084DAA6 /* Shiny */,
+				075C577526CB699800CB154C /* ConfettiView */,
+				075C577826CB7D4100CB154C /* SwiftConfettiView */,
 			);
 			productName = Vexillum;
 			productReference = 0746890C26B900D60066D145 /* Vexillum.app */;
@@ -606,6 +640,9 @@
 			mainGroup = 0746890326B900D60066D145;
 			packageReferences = (
 				0746895426B9150D0066D145 /* XCRemoteSwiftPackageReference "PreviewView" */,
+				073F25A326C9FB110084DAA6 /* XCRemoteSwiftPackageReference "shiny" */,
+				075C577426CB699800CB154C /* XCRemoteSwiftPackageReference "ConfettiView" */,
+				075C577726CB7D4100CB154C /* XCRemoteSwiftPackageReference "SwiftConfettiView" */,
 			);
 			productRefGroup = 0746890D26B900D60066D145 /* Products */;
 			projectDirPath = "";
@@ -741,6 +778,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073F259F26C9E7B90084DAA6 /* QuizHomeViewController.swift in Sources */,
 				07A7602926BA4248006437E4 /* CountryViewController.swift in Sources */,
 				07A7602D26BA48E5006437E4 /* ReusableView.swift in Sources */,
 				0746894126B902580066D145 /* Country.swift in Sources */,
@@ -752,6 +790,7 @@
 				0746894D26B907F70066D145 /* FlagListViewModel.swift in Sources */,
 				077D6D1D26C3620A004AA28E /* CountryViewDetailCell.swift in Sources */,
 				072AED1626C3945A006650F6 /* LinkFooterView.swift in Sources */,
+				07EB5E8B26CCC73F0018F540 /* StyledButton.swift in Sources */,
 				0746891426B900D60066D145 /* ViewController.swift in Sources */,
 				0746894A26B906FB0066D145 /* SplitMix64.swift in Sources */,
 				07ACAD4B26C9ADAD00FC37DE /* Applyable.swift in Sources */,
@@ -768,6 +807,7 @@
 				07ACAD4526C8E35F00FC37DE /* QuizViewController.swift in Sources */,
 				07D47EC426C754DB00005544 /* QuizQuestionViewController.swift in Sources */,
 				07249A3826C4CEC500DE3278 /* CountryLocationCell.swift in Sources */,
+				073F25A226C9F5F50084DAA6 /* QuizCompleteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1299,6 +1339,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		073F25A326C9FB110084DAA6 /* XCRemoteSwiftPackageReference "shiny" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maustinstar/shiny.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 		0746895426B9150D0066D145 /* XCRemoteSwiftPackageReference "PreviewView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/theoriginalbit/PreviewView";
@@ -1307,13 +1355,44 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		075C577426CB699800CB154C /* XCRemoteSwiftPackageReference "ConfettiView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NSHipster/ConfettiView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.1;
+			};
+		};
+		075C577726CB7D4100CB154C /* XCRemoteSwiftPackageReference "SwiftConfettiView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/theoriginalbit/SwiftConfettiView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		073F25A426C9FB110084DAA6 /* Shiny */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 073F25A326C9FB110084DAA6 /* XCRemoteSwiftPackageReference "shiny" */;
+			productName = Shiny;
+		};
 		0746895526B9150D0066D145 /* PreviewView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0746895426B9150D0066D145 /* XCRemoteSwiftPackageReference "PreviewView" */;
 			productName = PreviewView;
+		};
+		075C577526CB699800CB154C /* ConfettiView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 075C577426CB699800CB154C /* XCRemoteSwiftPackageReference "ConfettiView" */;
+			productName = ConfettiView;
+		};
+		075C577826CB7D4100CB154C /* SwiftConfettiView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 075C577726CB7D4100CB154C /* XCRemoteSwiftPackageReference "SwiftConfettiView" */;
+			productName = SwiftConfettiView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
