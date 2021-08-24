@@ -78,6 +78,8 @@
 		07ACAD4D26C9B16700FC37DE /* LinearProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07ACAD4C26C9B16700FC37DE /* LinearProgressView.swift */; };
 		07D47EC426C754DB00005544 /* QuizQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D47EC326C754DB00005544 /* QuizQuestionViewController.swift */; };
 		07EB5E8B26CCC73F0018F540 /* StyledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EB5E8A26CCC73F0018F540 /* StyledButton.swift */; };
+		07F6D80A26CF2DAD00A74181 /* QuizQuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F6D80926CF2DAD00A74181 /* QuizQuestionViewModel.swift */; };
+		07F6D80C26CF320E00A74181 /* QuizCompleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F6D80B26CF320E00A74181 /* QuizCompleteViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +198,8 @@
 		07ACAD4C26C9B16700FC37DE /* LinearProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearProgressView.swift; sourceTree = "<group>"; };
 		07D47EC326C754DB00005544 /* QuizQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewController.swift; sourceTree = "<group>"; };
 		07EB5E8A26CCC73F0018F540 /* StyledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyledButton.swift; sourceTree = "<group>"; };
+		07F6D80926CF2DAD00A74181 /* QuizQuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizQuestionViewModel.swift; sourceTree = "<group>"; };
+		07F6D80B26CF320E00A74181 /* QuizCompleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCompleteViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -319,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				073F25A126C9F5F50084DAA6 /* QuizCompleteViewController.swift */,
+				07F6D80B26CF320E00A74181 /* QuizCompleteViewModel.swift */,
 			);
 			path = QuizCompleteView;
 			sourceTree = "<group>";
@@ -475,6 +480,7 @@
 			children = (
 				07D47EC326C754DB00005544 /* QuizQuestionViewController.swift */,
 				07ACAD4126C8E0F900FC37DE /* QuizQuestionOptionView.swift */,
+				07F6D80926CF2DAD00A74181 /* QuizQuestionViewModel.swift */,
 			);
 			path = QuizQuestion;
 			sourceTree = "<group>";
@@ -782,6 +788,7 @@
 				07A7602926BA4248006437E4 /* CountryViewController.swift in Sources */,
 				07A7602D26BA48E5006437E4 /* ReusableView.swift in Sources */,
 				0746894126B902580066D145 /* Country.swift in Sources */,
+				07F6D80C26CF320E00A74181 /* QuizCompleteViewModel.swift in Sources */,
 				07ACAD4926C8E49E00FC37DE /* QuizViewModel.swift in Sources */,
 				073430B026C61C1500F56019 /* Intents.intentdefinition in Sources */,
 				07A7603126BA4A8C006437E4 /* FlagListTableViewCell.swift in Sources */,
@@ -792,6 +799,7 @@
 				072AED1626C3945A006650F6 /* LinkFooterView.swift in Sources */,
 				07EB5E8B26CCC73F0018F540 /* StyledButton.swift in Sources */,
 				0746891426B900D60066D145 /* ViewController.swift in Sources */,
+				07F6D80A26CF2DAD00A74181 /* QuizQuestionViewModel.swift in Sources */,
 				0746894A26B906FB0066D145 /* SplitMix64.swift in Sources */,
 				07ACAD4B26C9ADAD00FC37DE /* Applyable.swift in Sources */,
 				0746891026B900D60066D145 /* AppDelegate.swift in Sources */,

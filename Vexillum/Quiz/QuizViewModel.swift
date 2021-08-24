@@ -11,24 +11,30 @@ import UIKit
 import ConfettiView
 
 class QuizViewModel: ObservableObject {
-  private let questions: [QuizQuestion]
-  private var answers: [QuizQuestion.Option] = []
+  var questions: [QuizQuestion]
+  @Published var currentQuestion: QuizQuestion?
 
-  var currentQuestion: QuizQuestion? {
-    didSet {
-      self.onCurrentQuestionChanged?(self.currentQuestion == nil)
-    }
+  let subject = PassthroughSubject<QuizQuestion.Option, Never>()
+
+  private var cancellables = Set<AnyCancellable>()
+
+  func progress(for question: QuizQuestion) -> CGFloat {
+    let index = self.questions.firstIndex(of: question)!
+    return CGFloat(index) / CGFloat(self.questions.count)
   }
 
-  var onCurrentQuestionChanged: ((Bool) -> Void)?
-
-  init(using provider: CountryProvider = .shared, numberOfQuestions: Int = 20, choicesPerQuestion: Int = 4) {
+  init(using provider: CountryProvider = .shared, numberOfQuestions: Int = 3, choicesPerQuestion: Int = 4) {
     self.questions = Self.createQuiz(
       for: provider.allCountries,
          numberOfQuestions: numberOfQuestions,
          choicesPerQuestion: choicesPerQuestion
     )
-    self.currentQuestion = self.questions.first!
+
+    self.currentQuestion = self.questions.first
+
+    subject.sink { [weak self] in
+      self?.questionWasAnswered(with: $0)
+    }.store(in: &cancellables)
   }
 
   private static func convertCountryToOption(_ country: Country) -> QuizQuestion.Option {
@@ -57,48 +63,13 @@ class QuizViewModel: ObservableObject {
     }
   }
 
-  func addAnswer(_ answer: QuizQuestion.Option) {
-    self.answers.append(answer)
-  }
+  func questionWasAnswered(with option: QuizQuestion.Option) {
+    let currentQuestion = self.currentQuestion!
+    let index = self.questions.firstIndex(of: currentQuestion)!
 
-  func correctFlagImage() -> UIImage {
-    UIImage(named: self.currentQuestion!.correctOption.flagImageName)!
-  }
-
-  func options() -> [QuizQuestion.Option] {
-    self.currentQuestion!.allOptions
-  }
-
-  func isCorrect(selectedOption: QuizQuestion.Option) -> Bool {
-    self.currentQuestion!.correctOption == selectedOption
-  }
-
-  func goToNextQuestion() {
-    guard let currentQuestion = self.currentQuestion,
-          let index = self.questions.firstIndex(of: currentQuestion)
-    else {
-      fatalError()
-    }
+    self.questions[index].answer = option
 
     self.currentQuestion = index == self.questions.indices.endIndex - 1 ? nil : self.questions[index + 1]
-  }
-
-  func progress() -> CGFloat {
-    let index = self.questions.firstIndex(of: self.currentQuestion!)!
-    return CGFloat(index) / CGFloat(self.questions.count)
-  }
-
-  func percentCorrect() -> Double {
-    let amountCorrect = self.correctOptions().count
-    return Double(amountCorrect) / Double(self.questions.count)
-  }
-
-  func confettiContent() -> [ConfettiView.Content] {
-    self.correctOptions().map { ConfettiView.Content.text($0.correctOption.flag, 14.0) }
-  }
-
-  private func correctOptions() -> [QuizQuestion] {
-    zip(self.questions, self.answers).filter { $0.correctOption == $1 }.map(\.0)
   }
 }
 

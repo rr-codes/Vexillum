@@ -93,7 +93,7 @@ class StyledButton: UIButton {
     self.action = action
     super.init(frame: .zero)
 
-    self.layer.cornerRadius = 10.0 //6.0
+    self.layer.cornerRadius = 10.0 // 6.0
     self.adjustsImageWhenHighlighted = false
 
     let isDarkMode = self.traitCollection.userInterfaceStyle == .dark

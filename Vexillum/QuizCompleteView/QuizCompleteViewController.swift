@@ -63,13 +63,13 @@ extension UIFont {
 }
 
 class QuizCompleteViewController: UIViewController {
-  private var viewModel: QuizViewModel!
+  private var viewModel: QuizCompleteViewModel!
 
   let confetti = ConfettiView().apply {
     $0.translatesAutoresizingMaskIntoConstraints = false
   }
 
-  convenience init(using viewModel: QuizViewModel) {
+  convenience init(using viewModel: QuizCompleteViewModel) {
     self.init()
     self.viewModel = viewModel
   }
@@ -199,7 +199,7 @@ class QuizCompleteViewController: UIViewController {
 struct QuizCompleteViewController_Previews: PreviewProvider {
   static var previews: some View {
     Preview(
-      for: QuizCompleteViewController(using: QuizViewModel()),
+      for: QuizCompleteViewController(using: QuizCompleteViewModel(for: [])),
       navigationControllerStyle: .none
     ).preferredColorScheme(.light)
     .edgesIgnoringSafeArea(.all).previewDevice(nil)
@@ -207,7 +207,10 @@ struct QuizCompleteViewController_Previews: PreviewProvider {
 }
 
 extension UIImage {
-  static func symbol(_ systemName: String) -> Self {
-    Self(systemName: systemName)!
+  static func symbol(
+    _ systemName: String,
+    withConfiguration configuration: UIImage.SymbolConfiguration? = nil
+  ) -> Self {
+    Self(systemName: systemName, withConfiguration: configuration)!
   }
 }

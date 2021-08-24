@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct QuizQuestion: Equatable {
-  struct Option: Equatable, Identifiable {
+struct QuizQuestion {
+  let id = UUID()
+
+  struct Option {
     let id: Country.ID
     let flagImageName: String
     let name: String
@@ -17,8 +19,19 @@ struct QuizQuestion: Equatable {
 
   let correctOption: Option
   let alternateOptions: [Option]
+  var answer: Option?
 
   var allOptions: [Option] {
     (self.alternateOptions + [self.correctOption]).shuffled()
+  }
+
+  var isCorrect: Bool {
+    self.correctOption.id == self.answer?.id
+  }
+}
+
+extension QuizQuestion: Equatable {
+  static func == (_ lhs: Self, _ rhs: Self) -> Bool {
+    lhs.id == rhs.id
   }
 }

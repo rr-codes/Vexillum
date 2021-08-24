@@ -15,9 +15,9 @@ class QuizQuestionViewController: UIViewController {
 
   private var isLocked = false
 
-  var viewModel: QuizViewModel!
+  var viewModel: QuizQuestionViewModel!
 
-  convenience init(using viewModel: QuizViewModel) {
+  convenience init(using viewModel: QuizQuestionViewModel) {
     self.init()
 
     self.viewModel = viewModel
@@ -26,11 +26,6 @@ class QuizQuestionViewController: UIViewController {
   override func viewDidLoad() {
     let image = self.viewModel.correctFlagImage()
     let imageView = UIImageView(image: image).apply(self.configureImageView(_:))
-
-    let width = self.view.layoutMarginsGuide.layoutFrame.width - 32
-    let imageWidth = image.size.width
-    let imageHeight = image.size.height
-    let newHeight = imageHeight * (width / imageWidth)
 
     self.view.addSubview(imageView)
 
@@ -49,21 +44,41 @@ class QuizQuestionViewController: UIViewController {
 
     self.view.addSubview(grid)
 
-    imageView.constrain(to: self.view.layoutMarginsGuide, on: [.horizontal, .top])
-    imageView.constrain(to: min(300, newHeight), on: .height)
-    grid.constrain(to: self.view.layoutMarginsGuide, on: .horizontal)
-    label.constrain(to: self.view.layoutMarginsGuide, on: .horizontal)
-
-    NSLayoutConstraint.activate([
-      label.topAnchor.constraint(equalTo: imageView.bottomAnchor),
-      grid.topAnchor.constraint(equalTo: label.bottomAnchor)
-    ])
-
     self.view.backgroundColor = .systemBackground
 
     self.feedbackGenerator.prepare()
 
+    self.configureConstraints(imageView: imageView, grid: grid, label: label)
+
     self.view.layoutMargins = .zero
+  }
+
+  private func configureConstraints(imageView: UIImageView, grid: UIView, label: UIView) {
+    let dummyView = UIView()
+    dummyView.isHidden = true
+    dummyView.translatesAutoresizingMaskIntoConstraints = false
+    self.view.addSubview(dummyView)
+    dummyView.constrain(to: self.view, on: .horizontal)
+
+    let width = self.view.layoutMarginsGuide.layoutFrame.width - 32
+    let imageWidth = imageView.image!.size.width
+    let imageHeight = imageView.image!.size.height
+    let newHeight = imageHeight * (width / imageWidth)
+
+    imageView.constrain(to: self.view.layoutMarginsGuide, on: .horizontal)
+    imageView.constrain(to: min(300, newHeight), on: .height)
+    grid.constrain(to: self.view.layoutMarginsGuide, on: .horizontal)
+    grid.constrain(to: self.view.layoutMarginsGuide, on: .bottom, constant: 110)
+    label.constrain(to: self.view.layoutMarginsGuide, on: .horizontal)
+
+    dummyView.constrain(to: self.view.layoutMarginsGuide, on: .top)
+
+    imageView.constrain(to: dummyView, on: .centerY)
+
+    NSLayoutConstraint.activate([
+      dummyView.bottomAnchor.constraint(equalTo: label.topAnchor),
+      label.bottomAnchor.constraint(equalTo: grid.topAnchor, constant: -20)
+    ])
   }
 
   @objc private func handleOptionTap(sender: UITapGestureRecognizer) {
@@ -74,15 +89,10 @@ class QuizQuestionViewController: UIViewController {
 
     // swiftlint:disable:next force_cast
     let view = sender.view as! QuizQuestionOptionView
-    let isCorrect = self.viewModel.isCorrect(selectedOption: view.option)
 
-    view.setSelected(isCorrect: isCorrect)
-    self.viewModel.addAnswer(view.option)
-
-    self.feedbackGenerator.notificationOccurred(isCorrect ? .success : .error)
-
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-      self.viewModel.goToNextQuestion()
+    self.viewModel.submitAnswer(view.option) { isCorrect in
+      self.feedbackGenerator.notificationOccurred(isCorrect ? .success : .error)
+      view.setSelected(isCorrect: isCorrect)
     }
   }
 
@@ -104,7 +114,7 @@ class QuizQuestionViewController: UIViewController {
   private func configureLabel(_ label: UILabel) {
     label.text = "Which country has this flag?"
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.font = .preferredFont(forTextStyle: .headline)
+    label.font = .systemFont(ofSize: 20.0, weight: .bold)
   }
 
   private func optionView(for option: QuizQuestion.Option) -> QuizQuestionOptionView {
@@ -119,15 +129,32 @@ class QuizQuestionViewController: UIViewController {
 }
 
 struct QuizQuestionViewController_Previews: PreviewProvider {
-  static func country(withName name: String) -> Country {
-    CountryProvider.shared.allCountries.first {
-      $0.name.common == name
-    }!
+  static func option(withName name: String) -> QuizQuestion.Option {
+    let country = CountryProvider.shared.allCountries.first { $0.name.common == name }!
+    return .init(
+      id: country.id,
+      flagImageName: country.flagImageName,
+      name: country.name.common,
+      flag: country.flag
+    )
+  }
+
+  static var viewModel: QuizQuestionViewModel {
+    let question = QuizQuestion(
+      correctOption: option(withName: "Nepal"),
+      alternateOptions: [
+        option(withName: "Australia"),
+        option(withName: "France"),
+        option(withName: "Germany")
+      ]
+    )
+
+    return .init(for: question, with: .init())
   }
 
   static var previews: some View {
     Preview(
-      for: QuizQuestionViewController(using: .init()),
+      for: QuizQuestionViewController(using: viewModel),
       navigationControllerStyle: .none
     )
     .edgesIgnoringSafeArea(.all).previewDevice(nil)
